@@ -1,5 +1,4 @@
-import { Expect, IgnoreTest, Test, TestCase, TestFixture } from 'alsatian';
-import { copyTo } from './copy-to';
+import { IgnoreTest, Test, TestCase, TestFixture } from 'alsatian';
 
 @TestFixture('copyTo() Tests')
 export class CopyToTests {

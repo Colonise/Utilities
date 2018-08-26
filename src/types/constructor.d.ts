@@ -1,5 +1,6 @@
 export interface Constructor<T> {
-    new (...args: any[]): T;
     prototype?: T;
     name?: string;
+    // tslint:disable-next-line:no-any
+    new (...args: any[]): T;
 }
