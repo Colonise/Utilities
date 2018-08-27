@@ -1,4 +1,4 @@
-import { IgnoreTest, Test, TestCase, TestFixture } from 'alsatian';
+import { IgnoreTest, Test, TestFixture } from 'alsatian';
 
 @TestFixture('copy() Tests')
 export class CopyTests {

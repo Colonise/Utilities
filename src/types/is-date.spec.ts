@@ -1,5 +1,5 @@
-import { Expect, IgnoreTest, Test, TestCase, TestFixture } from 'alsatian';
-import { isDate } from 'util';
+import { Expect, Test, TestCase, TestFixture } from 'alsatian';
+import { isDate } from './is-date';
 
 @TestFixture('isDate() Tests')
 export class IsDateTests {
