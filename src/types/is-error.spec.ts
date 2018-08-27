@@ -1,4 +1,4 @@
-import { Expect, IgnoreTest, Test, TestCase, TestFixture } from 'alsatian';
+import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isError } from './is-error';
 
 @TestFixture('isError() Tests')

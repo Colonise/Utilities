@@ -1,4 +1,4 @@
-import { Expect, IgnoreTest, Test, TestCase, TestFixture } from 'alsatian';
+import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isRegExp } from './is-reg-exp';
 
 @TestFixture('isRegExp() Tests')
