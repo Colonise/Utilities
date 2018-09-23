@@ -1,1 +1,1 @@
-export type Indexed<T> = { [K in keyof T]: T[K] };
+export type Indexed<T = { [key: string]: any }> = { [K in keyof T]: T[K] };
