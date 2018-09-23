@@ -1,4 +1,4 @@
-import { Expect, IgnoreTest, Test, TestCase, TestFixture } from 'alsatian';
+import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { extract } from './extract';
 
 // Disable no-any because it's easier to write unit tests with them for extract()
