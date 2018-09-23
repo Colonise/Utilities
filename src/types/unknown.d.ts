@@ -7,6 +7,8 @@ export type Unknown =
     | number
     | symbol
     | object
-    | Array<any>
+    // tslint:disable-next-line:no-any
+    | any[]
     | Function
+    // tslint:disable-next-line:no-any
     | (new (...args: any[]) => any);

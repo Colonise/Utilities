@@ -1,4 +1,3 @@
-import { Indexed } from '../types/indexed';
 import { Unknown } from '../types/unknown';
 
 export function extract<T, P extends keyof T>(object: T, property: P): T[P] | undefined;
@@ -116,14 +115,17 @@ export function extract<
     property9: P9
 ): T[P1][P2][P3][P4][P5][P6][P7][P8][P9] | undefined;
 export function extract<T>(object: T, ...properties: string[]): Unknown {
-    let result = <Indexed>object;
+    // tslint:disable-next-line:no-any
+    let result: any = object;
 
     for (let i = 0; i < properties.length; i++) {
         const property = properties[i];
-        result = result[property];
+        const current = result[property];
 
-        if (result == null) {
+        if (current == null) {
             return undefined;
+        } else {
+            result = current;
         }
     }
 
