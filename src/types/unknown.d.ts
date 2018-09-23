@@ -5,6 +5,8 @@ export type Unknown =
     | string
     | boolean
     | number
+    | symbol
     | object
+    | Array<any>
     | Function
     | (new (...args: any[]) => any);
