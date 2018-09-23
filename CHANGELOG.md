@@ -1,5 +1,21 @@
 Changelog
 
+# [1.2.0](https://github.com/Colonise/Utilities/compare/v1.1.0...v1.2.0) (2018-09-23)
+
+
+### Bug Fixes
+
+* **Indexed:** provide a default value for T ([63928a3](https://github.com/Colonise/Utilities/commit/63928a3))
+* **Unknown:** include symbol and Array types ([c66d445](https://github.com/Colonise/Utilities/commit/c66d445))
+* Fix some exports ([ab8965c](https://github.com/Colonise/Utilities/commit/ab8965c))
+* Fix some linting and build errors ([e333245](https://github.com/Colonise/Utilities/commit/e333245))
+
+
+### Features
+
+* **extract:** create extract function ([9aefbc2](https://github.com/Colonise/Utilities/commit/9aefbc2))
+* **Unknown:** Add type 'Unknown' that represents all base types ([84df0fa](https://github.com/Colonise/Utilities/commit/84df0fa))
+
 # [1.1.0](https://github.com/Colonise/Utilities/compare/v1.0.0...v1.1.0) (2018-08-27)
 
 
