@@ -1,5 +1,22 @@
 Changelog
 
+# [2.0.0](https://github.com/Colonise/Utilities/compare/v1.2.0...v2.0.0) (2018-10-28)
+
+
+### Bug Fixes
+
+* replace tslint with TypeScript unused variable ([f1bac34](https://github.com/Colonise/Utilities/commit/f1bac34))
+
+
+### Features
+
+* upgrade TypeScript version to 3.1.3 ([4d62650](https://github.com/Colonise/Utilities/commit/4d62650))
+
+
+### BREAKING CHANGES
+
+* TypeScript version 2.7.2 changed to 3.1.3
+
 # [1.2.0](https://github.com/Colonise/Utilities/compare/v1.1.0...v1.2.0) (2018-09-23)
 
 
