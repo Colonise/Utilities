@@ -34,4 +34,22 @@ export class CopyTests {
 
         Expect(actual).toBe(expected);
     }
+
+    @Test('extract() should have correct intellisense')
+    public extract3() {
+        const object: {
+            a?: { b?: { c?: { d?: { e?: { f?: { g?: { h?: { i?: {} } } } } } } } };
+        } = {};
+
+        extract(object);
+        extract(object, 'a');
+        extract(object, 'a', 'b');
+        extract(object, 'a', 'b', 'c');
+        extract(object, 'a', 'b', 'c', 'd');
+        extract(object, 'a', 'b', 'c', 'd', 'e');
+        extract(object, 'a', 'b', 'c', 'd', 'e', 'f');
+        extract(object, 'a', 'b', 'c', 'd', 'e', 'f', 'g');
+        extract(object, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
+        extract(object, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i');
+    }
 }
