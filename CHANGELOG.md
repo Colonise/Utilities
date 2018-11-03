@@ -1,5 +1,12 @@
 Changelog
 
+## [2.0.1](https://github.com/Colonise/Utilities/compare/v2.0.0...v2.0.1) (2018-11-03)
+
+
+### Bug Fixes
+
+* **extract:** fix extract's intellisense ([e67148c](https://github.com/Colonise/Utilities/commit/e67148c))
+
 # [2.0.0](https://github.com/Colonise/Utilities/compare/v1.2.0...v2.0.0) (2018-10-28)
 
 
