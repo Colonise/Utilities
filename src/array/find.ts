@@ -1,16 +1,6 @@
-import { Finder } from '../types/finder';
+import { findBy } from './find-by';
 
 export function find<T>(array: T[], item: T): T | undefined;
-export function find<T>(array: T[], finder: Finder<T>): T | undefined;
-export function find<T>(array: T[], itemOrFinder: T | Finder<T>) {
-    const finder: Finder<T> =
-        typeof itemOrFinder === 'function' ? <Finder<T>>itemOrFinder : item => item === itemOrFinder;
-
-    for (let i = 0; i < array.length; i++) {
-        if (finder(array[i], i, array)) {
-            return array[i];
-        }
-    }
-
-    return undefined;
+export function find<T>(array: T[], itemToFind: T): T | undefined {
+    return findBy(array, item => item === itemToFind);
 }
