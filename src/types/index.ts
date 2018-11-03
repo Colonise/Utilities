@@ -15,4 +15,3 @@ export * from './is-string';
 export * from './is-undefined';
 export * from './is-void';
 export * from './is';
-export * from './unknown';
