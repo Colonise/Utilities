@@ -1,4 +1,4 @@
-import { RecursivelyDefined } from '../types/defined';
+import { RecursivelyDefined } from '../types';
 
 export function extract<TObject>(object: TObject): RecursivelyDefined<TObject> | undefined;
 export function extract<TObject, TProperty extends keyof RecursivelyDefined<TObject>>(

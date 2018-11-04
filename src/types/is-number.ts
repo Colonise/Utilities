@@ -1,6 +1,7 @@
 import { is } from './is';
 
-// tslint:disable-next-line:no-any
-export function isNumber(object: any): object is number {
+export function isNumber(object: unknown): object is number {
+    // TSLint seems to think `typeof object === 'number'` is always false
+    // tslint:disable-next-line:strict-type-predicates
     return typeof object === 'number' || is(object, Number);
 }

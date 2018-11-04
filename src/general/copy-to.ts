@@ -1,4 +1,4 @@
-import { isObject } from '../types/is-object';
+import { isObject } from '../types';
 
 export function copyTo<T>(from: T, to: T): T {
     if (!isObject(to)) {

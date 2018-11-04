@@ -7,7 +7,7 @@ import * as typescript from 'gulp-typescript';
 import mergeStream from 'merge-stream';
 import streamToPromise from 'stream-to-promise';
 import { TapBark } from 'tap-bark';
-import * as TSGulp from 'tsgulp';
+import { Default, Dependencies, Name, Project } from 'tsgulp';
 import * as TSlint from 'tslint';
 
 enum TestOutput {
@@ -16,7 +16,7 @@ enum TestOutput {
     Coverage
 }
 
-@TSGulp.Project('Utilities')
+@Project('Utilities')
 // @ts-ignore: Allow unused class
 class GulpFile {
     public readonly tsProject = typescript.createProject('./src/tsconfig.json');
@@ -37,7 +37,7 @@ class GulpFile {
         await del(this.distributeDirectiory);
     }
 
-    @TSGulp.Dependencies('clean')
+    @Dependencies('clean')
     public build() {
         return mergeStream(
             this.tsProject
@@ -48,7 +48,7 @@ class GulpFile {
         );
     }
 
-    @TSGulp.Dependencies('clean', 'build')
+    @Dependencies('clean', 'build')
     public distribute() {
         return gulp.src(this.distributeFiles).pipe(gulp.dest(this.distributeDirectiory));
     }
@@ -66,18 +66,18 @@ class GulpFile {
             .pipe(GulpTSLint.report());
     }
 
-    @TSGulp.Dependencies('build')
+    @Dependencies('build')
     public test() {
         return this.runAlsatian(TestOutput.Result);
     }
 
-    @TSGulp.Dependencies('build')
-    @TSGulp.Name('test-no-output')
+    @Dependencies('build')
+    @Name('test-no-output')
     public testNoOutput() {
         return this.runAlsatian(TestOutput.None);
     }
 
-    @TSGulp.Dependencies('build')
+    @Dependencies('build')
     public coverage() {
         return this.runAlsatian(TestOutput.Coverage);
     }
@@ -121,8 +121,8 @@ class GulpFile {
         return testRunner.run(testSet);
     }
 
-    @TSGulp.Default()
-    @TSGulp.Dependencies('lint', 'build', 'test-no-output', 'coverage', 'distribute')
+    @Default()
+    @Dependencies('lint', 'build', 'test-no-output', 'coverage', 'distribute')
     // tslint:disable-next-line:no-empty
     public all() {}
 }

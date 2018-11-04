@@ -1,4 +1,4 @@
-import { isArray } from '../types/is-array';
+import { isArray } from '../types';
 
 export function remove<T>(array: T[], item: T): T[];
 export function remove<T>(array: T[], items: T[]): T[];

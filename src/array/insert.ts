@@ -1,4 +1,4 @@
-import { isArray } from '../types/is-array';
+import { isArray } from '../types';
 
 export function insert<T>(array: T[], index: number, item: T): T[];
 export function insert<T>(array: T[], index: number, items: T[]): T[];

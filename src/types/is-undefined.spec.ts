@@ -6,8 +6,8 @@ export class IsUndefinedTests {
     @TestCase(undefined, true)
     @TestCase([], false)
     @TestCase({}, false)
-    @Test('isUndefined(obj: any) should check if a variable is undefined')
-    public isUndefined1<T>(object: T, expected: boolean) {
+    @Test('isUndefined(object: unknown) should check if a variable is undefined')
+    public isUndefined1(object: unknown, expected: boolean) {
         const actual = isUndefined(object);
 
         Expect(actual).toBe(expected);

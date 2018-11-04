@@ -6,8 +6,8 @@ export class IsStringTests {
     @TestCase('a', true)
     @TestCase([], false)
     @TestCase({}, false)
-    @Test('isString(obj: any) should check if a variable is a string')
-    public isString1<T>(object: T, expected: boolean) {
+    @Test('isString(object: unknown) should check if a variable is a string')
+    public isString1(object: unknown, expected: boolean) {
         const actual = isString(object);
 
         Expect(actual).toBe(expected);

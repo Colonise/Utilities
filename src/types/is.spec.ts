@@ -12,8 +12,10 @@ export class IsTests {
     @TestCase('a', String, true)
     @TestCase(true, Object, false)
     @TestCase(true, Boolean, true)
-    @Test('is(obj: any, constructor: Constructor<any>) should check if a variable is an instance of a constructor')
-    public is1<T>(object: T, constructor: Constructor<T>, expected: boolean) {
+    @Test(
+        'is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor'
+    )
+    public is1(object: unknown, constructor: Constructor<unknown>, expected: boolean) {
         const actual = is(object, constructor);
 
         Expect(actual).toBe(expected);
@@ -27,8 +29,15 @@ export class IsTests {
     @TestCase('a', Object, String, true)
     @TestCase(true, Object, Object, false)
     @TestCase(true, Object, Boolean, true)
-    @Test('is(obj: any, constructor: Constructor<any>) should check if a variable is an instance of a constructor')
-    public is2<T, T1, T2>(object: T, constructor1: Constructor<T1>, constructor2: Constructor<T2>, expected: boolean) {
+    @Test(
+        'is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor'
+    )
+    public is2(
+        object: unknown,
+        constructor1: Constructor<unknown>,
+        constructor2: Constructor<unknown>,
+        expected: boolean
+    ) {
         const actual = is(object, constructor1, constructor2);
 
         Expect(actual).toBe(expected);

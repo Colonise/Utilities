@@ -11,8 +11,8 @@ export class IsErrorTests {
     @TestCase(new TypeError(), true)
     @TestCase(new URIError(), true)
     @TestCase({}, false)
-    @Test('isError()')
-    public isError1<T>(object: T, expected: boolean) {
+    @Test('isError(object: unknown) should check if a variable is an Error')
+    public isError1(object: unknown, expected: boolean) {
         const actual = isError(object);
 
         Expect(actual).toBe(expected);
