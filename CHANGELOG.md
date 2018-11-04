@@ -1,5 +1,12 @@
 Changelog
 
+## [2.0.3](https://github.com/Colonise/Utilities/compare/v2.0.2...v2.0.3) (2018-11-04)
+
+
+### Bug Fixes
+
+* **is:** remove uses of any in is and isX functions ([aafeaca](https://github.com/Colonise/Utilities/commit/aafeaca))
+
 ## [2.0.2](https://github.com/Colonise/Utilities/compare/v2.0.1...v2.0.2) (2018-11-04)
 
 
