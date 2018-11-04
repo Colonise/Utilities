@@ -1,6 +1,7 @@
 import { isObjectTag } from './is-object-tag';
 
-// tslint:disable-next-line:no-any
-export function isNull(object: any): object is null {
+export function isNull(object: unknown): object is null {
+    // TSLint seems to think `object === null` is always false
+    // tslint:disable-next-line:strict-type-predicates
     return object === null || isObjectTag(object, 'Null');
 }

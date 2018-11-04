@@ -7,8 +7,8 @@ export class IsVoidTests {
     @TestCase(null, true)
     @TestCase([], false)
     @TestCase({}, false)
-    @Test('isVoid(obj: any) should check if a variable is null or undefined')
-    public isVoid1<T>(object: T, expected: boolean) {
+    @Test('isVoid(object: unknown) should check if a variable is null or undefined')
+    public isVoid1(object: unknown, expected: boolean) {
         const actual = isVoid(object);
 
         Expect(actual).toBe(expected);

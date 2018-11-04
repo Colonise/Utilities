@@ -10,8 +10,8 @@ export class IsFunctionTests {
     @TestCase(Function, true)
     @TestCase([], false)
     @TestCase({}, false)
-    @Test('isFunction(obj: any) should check if a variable is a function')
-    public isFunction1<T>(object: T, expected: boolean) {
+    @Test('isFunction(object: unknown) should check if a variable is a function')
+    public isFunction1(object: unknown, expected: boolean) {
         const actual = isFunction(object);
 
         Expect(actual).toBe(expected);

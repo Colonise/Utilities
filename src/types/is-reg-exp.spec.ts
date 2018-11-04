@@ -6,8 +6,8 @@ export class IsRegExpTests {
     @TestCase(/a/, true)
     @TestCase(new RegExp('a'), true)
     @TestCase({}, false)
-    @Test('isRegExp()')
-    public isRegExp1<T>(object: T, expected: boolean) {
+    @Test('isRegExp(object: unknown) should check if a variable is a RegExp')
+    public isRegExp1(object: unknown, expected: boolean) {
         const actual = isRegExp(object);
 
         Expect(actual).toBe(expected);

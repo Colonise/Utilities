@@ -8,8 +8,8 @@ export class IsNumberTests {
     @TestCase(NaN, true)
     @TestCase([], false)
     @TestCase({}, false)
-    @Test('isNumber(obj: any) should check if a variable is a number')
-    public isNumber1<T>(object: T, expected: boolean) {
+    @Test('isNumber(object: unknown) should check if a variable is a number')
+    public isNumber1(object: unknown, expected: boolean) {
         const actual = isNumber(object);
 
         Expect(actual).toBe(expected);

@@ -1,5 +1,4 @@
-import { isArray } from '../types/is-array';
-import { isObject } from '../types/is-object';
+import { isArray, isObject } from '../types';
 import { getOwnPropertyDescriptors } from './get-own-property-descriptors';
 
 export function clone<T>(object: T): T;
@@ -9,7 +8,7 @@ export function clone<T>(objectOrArray: T): T | T[] {
         return objectOrArray;
     }
 
-    if (isArray(objectOrArray)) {
+    if (isArray<T>(objectOrArray)) {
         return objectOrArray.slice();
     }
 

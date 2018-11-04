@@ -1,4 +1,5 @@
 export * from './constructor';
+export * from './defined';
 export * from './finder';
 export * from './indexed';
 export * from './is-array';
@@ -8,8 +9,8 @@ export * from './is-error';
 export * from './is-function';
 export * from './is-null';
 export * from './is-number';
-export * from './is-object';
 export * from './is-object-tag';
+export * from './is-object';
 export * from './is-reg-exp';
 export * from './is-string';
 export * from './is-undefined';

@@ -1,6 +1,7 @@
 import { is } from './is';
 
-// tslint:disable-next-line:no-any
-export function isFunction(object: any): object is Function {
+export function isFunction(object: unknown): object is Function {
+    // TSLint seems to think `typeof object === 'function'` is always false
+    // tslint:disable-next-line:strict-type-predicates
     return typeof object === 'function' || is(object, Function);
 }
