@@ -1,5 +1,13 @@
 Changelog
 
+## [2.0.2](https://github.com/Colonise/Utilities/compare/v2.0.1...v2.0.2) (2018-11-04)
+
+
+### Bug Fixes
+
+* **find:** add replace find with find and findBy ([e1b0cc7](https://github.com/Colonise/Utilities/commit/e1b0cc7))
+* **findIndex:** replace findIndex with finIndex and findIndexBy ([8363963](https://github.com/Colonise/Utilities/commit/8363963))
+
 ## [2.0.1](https://github.com/Colonise/Utilities/compare/v2.0.0...v2.0.1) (2018-11-03)
 
 
