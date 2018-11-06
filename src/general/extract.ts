@@ -156,6 +156,10 @@ export function extract<
       >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7][TProperty8][TProperty9]
     | undefined;
 export function extract(object: unknown, ...properties: string[]): unknown {
+    if (object == null) {
+        return undefined;
+    }
+
     // Allow any because to allow easy non-null and non-undefined coalescing
     // tslint:disable-next-line:no-any
     let result = <any>object;
