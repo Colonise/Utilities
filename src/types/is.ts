@@ -70,6 +70,6 @@ export function is<T1, T2, T3, T4, T5, T6, T7, T8, T9>(
     constructor8: Constructor<T8>,
     constructor9: Constructor<T9>
 ): object is T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9;
-export function is(object: unknown, ...constructors: Constructor<unknown>[]): boolean {
+export function is(object: unknown, ...constructors: Constructor[]): boolean {
     return constructors.some(constructor => object instanceof constructor || isObjectTag(object, constructor));
 }
