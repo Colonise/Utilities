@@ -15,7 +15,7 @@ export class IsTests {
     @Test(
         'is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor'
     )
-    public is1(object: unknown, constructor: Constructor<unknown>, expected: boolean) {
+    public is1(object: unknown, constructor: Constructor, expected: boolean) {
         const actual = is(object, constructor);
 
         Expect(actual).toBe(expected);
@@ -32,12 +32,7 @@ export class IsTests {
     @Test(
         'is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor'
     )
-    public is2(
-        object: unknown,
-        constructor1: Constructor<unknown>,
-        constructor2: Constructor<unknown>,
-        expected: boolean
-    ) {
+    public is2(object: unknown, constructor1: Constructor, constructor2: Constructor, expected: boolean) {
         const actual = is(object, constructor1, constructor2);
 
         Expect(actual).toBe(expected);
