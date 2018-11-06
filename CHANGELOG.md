@@ -1,5 +1,13 @@
 Changelog
 
+## [2.0.4](https://github.com/Colonise/Utilities/compare/v2.0.3...v2.0.4) (2018-11-06)
+
+
+### Bug Fixes
+
+* **Constructor:**  make Constructor extend Function ([77f34db](https://github.com/Colonise/Utilities/commit/77f34db))
+* **extract:** fix a bug where extract did not handle undefined object ([ad5e925](https://github.com/Colonise/Utilities/commit/ad5e925))
+
 ## [2.0.3](https://github.com/Colonise/Utilities/compare/v2.0.2...v2.0.3) (2018-11-04)
 
 
