@@ -156,6 +156,8 @@ export function extract<
       >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7][TProperty8][TProperty9]
     | undefined;
 export function extract(object: unknown, ...properties: string[]): unknown {
+    // TSLint seems to think `typeof object == null` is always false
+    // tslint:disable-next-line:strict-type-predicates
     if (object == null) {
         return undefined;
     }
