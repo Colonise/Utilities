@@ -1,5 +1,12 @@
 Changelog
 
+## [2.0.5](https://github.com/Colonise/Utilities/compare/v2.0.4...v2.0.5) (2018-11-12)
+
+
+### Bug Fixes
+
+* property 'name' in Constructor was undefined ([c7b3cfa](https://github.com/Colonise/Utilities/commit/c7b3cfa))
+
 ## [2.0.4](https://github.com/Colonise/Utilities/compare/v2.0.3...v2.0.4) (2018-11-06)
 
 
