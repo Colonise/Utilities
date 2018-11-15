@@ -45,7 +45,7 @@ export class CopyTests {
 
     @Test('extract() should have correct intellisense and return undefined')
     public extract3() {
-        const o: O = extract(undefined);
+        const o: O = extract<O>(undefined);
 
         const a: A = extract(o, 'a');
         const b: B = extract(o, 'a', 'b');
