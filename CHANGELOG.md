@@ -1,5 +1,20 @@
 Changelog
 
+## [2.0.5](https://github.com/Colonise/Utilities/compare/v2.0.4...v2.0.5) (2018-11-12)
+
+
+### Bug Fixes
+
+* property 'name' in Constructor was undefined ([c7b3cfa](https://github.com/Colonise/Utilities/commit/c7b3cfa))
+
+## [2.0.4](https://github.com/Colonise/Utilities/compare/v2.0.3...v2.0.4) (2018-11-06)
+
+
+### Bug Fixes
+
+* **Constructor:**  make Constructor extend Function ([77f34db](https://github.com/Colonise/Utilities/commit/77f34db))
+* **extract:** fix a bug where extract did not handle undefined object ([ad5e925](https://github.com/Colonise/Utilities/commit/ad5e925))
+
 ## [2.0.3](https://github.com/Colonise/Utilities/compare/v2.0.2...v2.0.3) (2018-11-04)
 
 
