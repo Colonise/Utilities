@@ -1,50 +1,52 @@
-import { RecursivelyDefined } from '../types';
+import { Defined } from '../types';
 
-export function extract<TObject>(object: TObject): RecursivelyDefined<TObject> | undefined;
-export function extract<TObject, TProperty extends keyof RecursivelyDefined<TObject>>(
+export function extract<TObject>(object: TObject): Defined<TObject> | undefined;
+export function extract<TObject, TProperty extends keyof Defined<TObject>>(
     object: TObject,
     property: TProperty
-): RecursivelyDefined<TObject>[TProperty] | undefined;
+): Defined<Defined<TObject>[TProperty]> | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>
 >(
     object: TObject,
     property1: TProperty1,
     property2: TProperty2
-): RecursivelyDefined<TObject>[TProperty1][TProperty2] | undefined;
+): Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]> | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1],
-    TProperty3 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>,
+    TProperty3 extends keyof Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>
 >(
     object: TObject,
     property1: TProperty1,
     property2: TProperty2,
     property3: TProperty3
-): RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3] | undefined;
+): Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]> | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1],
-    TProperty3 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2],
-    TProperty4 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>,
+    TProperty3 extends keyof Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>,
+    TProperty4 extends keyof Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>
 >(
     object: TObject,
     property1: TProperty1,
     property2: TProperty2,
     property3: TProperty3,
     property4: TProperty4
-): RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4] | undefined;
+): Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]> | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1],
-    TProperty3 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2],
-    TProperty4 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3],
-    TProperty5 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>,
+    TProperty3 extends keyof Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>,
+    TProperty4 extends keyof Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>,
+    TProperty5 extends keyof Defined<
+        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+    >
 >(
     object: TObject,
     property1: TProperty1,
@@ -52,15 +54,25 @@ export function extract<
     property3: TProperty3,
     property4: TProperty4,
     property5: TProperty5
-): RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5] | undefined;
+):
+    | Defined<
+          Defined<
+              Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+          >[TProperty5]
+      >
+    | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1],
-    TProperty3 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2],
-    TProperty4 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3],
-    TProperty5 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4],
-    TProperty6 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>,
+    TProperty3 extends keyof Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>,
+    TProperty4 extends keyof Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>,
+    TProperty5 extends keyof Defined<
+        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+    >,
+    TProperty6 extends keyof Defined<
+        Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]>[TProperty5]
+    >
 >(
     object: TObject,
     property1: TProperty1,
@@ -69,18 +81,34 @@ export function extract<
     property4: TProperty4,
     property5: TProperty5,
     property6: TProperty6
-): RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6] | undefined;
+):
+    | Defined<
+          Defined<
+              Defined<
+                  Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+              >[TProperty5]
+          >[TProperty6]
+      >
+    | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1],
-    TProperty3 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2],
-    TProperty4 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3],
-    TProperty5 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4],
-    TProperty6 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5],
-    TProperty7 extends keyof RecursivelyDefined<
-        TObject
-    >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>,
+    TProperty3 extends keyof Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>,
+    TProperty4 extends keyof Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>,
+    TProperty5 extends keyof Defined<
+        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+    >,
+    TProperty6 extends keyof Defined<
+        Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]>[TProperty5]
+    >,
+    TProperty7 extends keyof Defined<
+        Defined<
+            Defined<
+                Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+            >[TProperty5]
+        >[TProperty6]
+    >
 >(
     object: TObject,
     property1: TProperty1,
@@ -91,22 +119,44 @@ export function extract<
     property6: TProperty6,
     property7: TProperty7
 ):
-    | RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7]
+    | Defined<
+          Defined<
+              Defined<
+                  Defined<
+                      Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                  >[TProperty5]
+              >[TProperty6]
+          >[TProperty7]
+      >
     | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1],
-    TProperty3 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2],
-    TProperty4 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3],
-    TProperty5 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4],
-    TProperty6 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5],
-    TProperty7 extends keyof RecursivelyDefined<
-        TObject
-    >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6],
-    TProperty8 extends keyof RecursivelyDefined<
-        TObject
-    >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>,
+    TProperty3 extends keyof Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>,
+    TProperty4 extends keyof Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>,
+    TProperty5 extends keyof Defined<
+        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+    >,
+    TProperty6 extends keyof Defined<
+        Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]>[TProperty5]
+    >,
+    TProperty7 extends keyof Defined<
+        Defined<
+            Defined<
+                Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+            >[TProperty5]
+        >[TProperty6]
+    >,
+    TProperty8 extends keyof Defined<
+        Defined<
+            Defined<
+                Defined<
+                    Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                >[TProperty5]
+            >[TProperty6]
+        >[TProperty7]
+    >
 >(
     object: TObject,
     property1: TProperty1,
@@ -118,27 +168,57 @@ export function extract<
     property7: TProperty7,
     property8: TProperty8
 ):
-    | RecursivelyDefined<
-          TObject
-      >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7][TProperty8]
+    | Defined<
+          Defined<
+              Defined<
+                  Defined<
+                      Defined<
+                          Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                      >[TProperty5]
+                  >[TProperty6]
+              >[TProperty7]
+          >[TProperty8]
+      >
     | undefined;
 export function extract<
     TObject,
-    TProperty1 extends keyof RecursivelyDefined<TObject>,
-    TProperty2 extends keyof RecursivelyDefined<TObject>[TProperty1],
-    TProperty3 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2],
-    TProperty4 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3],
-    TProperty5 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4],
-    TProperty6 extends keyof RecursivelyDefined<TObject>[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5],
-    TProperty7 extends keyof RecursivelyDefined<
-        TObject
-    >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6],
-    TProperty8 extends keyof RecursivelyDefined<
-        TObject
-    >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7],
-    TProperty9 extends keyof RecursivelyDefined<
-        TObject
-    >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7][TProperty8]
+    TProperty1 extends keyof Defined<TObject>,
+    TProperty2 extends keyof Defined<Defined<TObject>[TProperty1]>,
+    TProperty3 extends keyof Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>,
+    TProperty4 extends keyof Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>,
+    TProperty5 extends keyof Defined<
+        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+    >,
+    TProperty6 extends keyof Defined<
+        Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]>[TProperty5]
+    >,
+    TProperty7 extends keyof Defined<
+        Defined<
+            Defined<
+                Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+            >[TProperty5]
+        >[TProperty6]
+    >,
+    TProperty8 extends keyof Defined<
+        Defined<
+            Defined<
+                Defined<
+                    Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                >[TProperty5]
+            >[TProperty6]
+        >[TProperty7]
+    >,
+    TProperty9 extends keyof Defined<
+        Defined<
+            Defined<
+                Defined<
+                    Defined<
+                        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                    >[TProperty5]
+                >[TProperty6]
+            >[TProperty7]
+        >[TProperty8]
+    >
 >(
     object: TObject,
     property1: TProperty1,
@@ -151,9 +231,21 @@ export function extract<
     property8: TProperty8,
     property9: TProperty9
 ):
-    | RecursivelyDefined<
-          TObject
-      >[TProperty1][TProperty2][TProperty3][TProperty4][TProperty5][TProperty6][TProperty7][TProperty8][TProperty9]
+    | Defined<
+          Defined<
+              Defined<
+                  Defined<
+                      Defined<
+                          Defined<
+                              Defined<
+                                  Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]
+                              >[TProperty4]
+                          >[TProperty5]
+                      >[TProperty6]
+                  >[TProperty7]
+              >[TProperty8]
+          >[TProperty9]
+      >
     | undefined;
 export function extract(object: unknown, ...properties: string[]): unknown {
     // TSLint seems to think `typeof object == null` is always false
