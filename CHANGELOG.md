@@ -1,5 +1,12 @@
 Changelog
 
+## [2.0.6](https://github.com/Colonise/Utilities/compare/v2.0.5...v2.0.6) (2018-11-15)
+
+
+### Bug Fixes
+
+* **extract:** ensure all depths use Defined ([c24950e](https://github.com/Colonise/Utilities/commit/c24950e))
+
 ## [2.0.5](https://github.com/Colonise/Utilities/compare/v2.0.4...v2.0.5) (2018-11-12)
 
 
