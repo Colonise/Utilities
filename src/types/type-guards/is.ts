@@ -1,4 +1,4 @@
-import { Constructor } from './constructor';
+import { Constructor } from '../constructor';
 import { isObjectTag } from './is-object-tag';
 
 export function is<T>(object: unknown, constructor: Constructor<T>): object is T;
