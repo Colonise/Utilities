@@ -1,4 +1,4 @@
-import { Constructor } from './constructor';
+import { Constructor } from '../constructor';
 
 export function isObjectTag<T>(object: T, tag: string): boolean;
 export function isObjectTag<T>(object: T, constructor: Constructor<T>): boolean;

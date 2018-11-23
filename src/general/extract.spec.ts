@@ -15,26 +15,26 @@ type O = { a?: A } | undefined;
 
 @TestFixture('extract() Tests')
 export class CopyTests {
-    @Test('extract() should extract a value from an object if all properties in the chain are not null nor undefined')
     @TestCase({ a: 1 }, ['a'], 1)
     @TestCase({ a: { a: 1 } }, ['a', 'a'], 1)
     @TestCase({ a: { a: { a: 1 } } }, ['a', 'a', 'a'], 1)
     @TestCase({ a: { a: { a: { a: 1 } } } }, ['a', 'a', 'a', 'a'], 1)
     @TestCase({ a: { a: { a: { a: { a: 1 } } } } }, ['a', 'a', 'a', 'a', 'a'], 1)
     @TestCase({ a: { a: { a: { a: { a: { a: 1 } } } } } }, ['a', 'a', 'a', 'a', 'a', 'a'], 1)
+    @Test('extract() should extract a value from an object if all properties in the chain are not null nor undefined')
     public extract1(object: unknown, properties: string[], expected: unknown) {
         const actual = extract.apply(null, [object, ...properties]);
 
         Expect(actual).toBe(expected);
     }
 
-    @Test('extract() should extract undefined from an object if any property in the chain is null or undefined')
     @TestCase({}, ['a'])
     @TestCase({ a: {} }, ['a', 'a'])
     @TestCase({ a: { a: {} } }, ['a', 'a', 'a'])
     @TestCase({ a: { a: { a: {} } } }, ['a', 'a', 'a', 'a'])
     @TestCase({ a: { a: { a: { a: {} } } } }, ['a', 'a', 'a', 'a', 'a'])
     @TestCase({ a: { a: { a: { a: { a: {} } } } } }, ['a', 'a', 'a', 'a', 'a', 'a'])
+    @Test('extract() should extract undefined from an object if any property in the chain is null or undefined')
     public extract2(object: unknown, properties: string[]) {
         const expected = undefined;
 

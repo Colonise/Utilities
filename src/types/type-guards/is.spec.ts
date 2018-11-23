@@ -1,5 +1,5 @@
 import { Expect, Test, TestCase, TestFixture } from 'alsatian';
-import { Constructor } from './constructor';
+import { Constructor } from '../constructor';
 import { is } from './is';
 
 @TestFixture('is() Tests')
