@@ -1,5 +1,12 @@
 Changelog
 
+## [2.0.7](https://github.com/Colonise/Utilities/compare/v2.0.6...v2.0.7) (2018-11-23)
+
+
+### Bug Fixes
+
+* **Constructor:** add name?: string ([7f85150](https://github.com/Colonise/Utilities/commit/7f85150))
+
 ## [2.0.6](https://github.com/Colonise/Utilities/compare/v2.0.5...v2.0.6) (2018-11-15)
 
 
