@@ -1,1 +1,1 @@
-export type Finder<T> = (item: T, index: number, array: T[]) => boolean;
+export type Finder<T> = (item: T, index: number, array: T[]) => unknown;
