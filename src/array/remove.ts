@@ -1,5 +1,13 @@
 import { removeAt } from './remove-at';
 
 export function remove<T>(array: T[], item: T): T[] {
-    return removeAt(array, array.indexOf(item));
+    let index = array.indexOf(item);
+
+    while (index !== -1) {
+        removeAt(array, index);
+
+        index = array.indexOf(item);
+    }
+
+    return array;
 }
