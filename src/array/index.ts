@@ -10,3 +10,4 @@ export * from './remove-at';
 export * from './remove-by';
 export * from './remove-many';
 export * from './remove';
+export * from './unique';
