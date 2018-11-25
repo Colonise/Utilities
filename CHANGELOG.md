@@ -1,5 +1,14 @@
 Changelog
 
+# [2.1.0](https://github.com/Colonise/Utilities/compare/v2.0.7...v2.1.0) (2018-11-24)
+
+
+### Features
+
+* **toBoolean:** create toBoolean which converts an object to a boolean ([d23a029](https://github.com/Colonise/Utilities/commit/d23a029))
+* **toNumber:** create toNumber that converts an object to a number ([b432a0b](https://github.com/Colonise/Utilities/commit/b432a0b))
+* **toString:** create toString that converts an object to a string ([8dd74d4](https://github.com/Colonise/Utilities/commit/8dd74d4))
+
 ## [2.0.7](https://github.com/Colonise/Utilities/compare/v2.0.6...v2.0.7) (2018-11-23)
 
 
