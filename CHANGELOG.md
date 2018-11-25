@@ -1,5 +1,26 @@
 Changelog
 
+# [2.2.0](https://github.com/Colonise/Utilities/compare/v2.1.0...v2.2.0) (2018-11-25)
+
+
+### Bug Fixes
+
+* **remove:** remove remove(array, items) and remove(array, index) ([1c8f867](https://github.com/Colonise/Utilities/commit/1c8f867))
+* remove, removeAt, removeMany, removeBy not removing all items ([b4d3482](https://github.com/Colonise/Utilities/commit/b4d3482))
+
+
+### Features
+
+* **ArrayIterator:** add ArrayIterator to replace and deprecate Finder ([c3544ad](https://github.com/Colonise/Utilities/commit/c3544ad))
+* **Finder:** allow truthy/falsey returns with `unknown` ([9413036](https://github.com/Colonise/Utilities/commit/9413036))
+* **first:** create first that returns the first item in an array ([c95fc60](https://github.com/Colonise/Utilities/commit/c95fc60))
+* **includes:** create includes that checks if an item is in an array ([3d8fca8](https://github.com/Colonise/Utilities/commit/3d8fca8))
+* **last:** create last that returns the last item in an array ([f6b1e57](https://github.com/Colonise/Utilities/commit/f6b1e57))
+* **removeAt:** create removeAt that removes from an array at an index ([05aee15](https://github.com/Colonise/Utilities/commit/05aee15))
+* **removeBy:** create removeBy that removes from an array with iterator ([cc94a76](https://github.com/Colonise/Utilities/commit/cc94a76))
+* **removeMany:** create removeMany that removes items from an array ([ca3b46e](https://github.com/Colonise/Utilities/commit/ca3b46e))
+* **unique:** create unique that returns an array of unique items ([432a489](https://github.com/Colonise/Utilities/commit/432a489))
+
 # [2.1.0](https://github.com/Colonise/Utilities/compare/v2.0.7...v2.1.0) (2018-11-24)
 
 
