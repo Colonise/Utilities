@@ -4,6 +4,7 @@ export * from './find-index';
 export * from './find';
 export * from './first';
 export * from './insert';
+export * from './last';
 export * from './remove-at';
 export * from './remove-by';
 export * from './remove-many';
