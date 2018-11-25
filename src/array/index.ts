@@ -4,5 +4,6 @@ export * from './find-index';
 export * from './find-index-by';
 export * from './insert';
 export * from './remove-at';
+export * from './remove-by';
 export * from './remove-many';
 export * from './remove';
