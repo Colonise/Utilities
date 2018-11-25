@@ -1,7 +1,7 @@
 import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { insert } from './insert';
 
-@TestFixture('insert Tests')
+@TestFixture('insert() Tests')
 export class InsertTests {
     @TestCase(['a', 'b', 'd', 'e'], ['a', 'b', 'c', 'd', 'e'], 2, 'c')
     @Test('insert<T>(array: T[], index: number, item: T) should insert an item into an array')

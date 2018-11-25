@@ -1,7 +1,7 @@
 import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { find } from './find';
 
-@TestFixture('find Tests')
+@TestFixture('find() Tests')
 export class FindTests {
     @TestCase(['a', 'b', 'c', 'd', 'e'], 'c', 'c')
     @TestCase(['a', 'b', 'c', 'd', 'e'], undefined, 'f')
