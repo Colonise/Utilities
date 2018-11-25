@@ -1,8 +1,8 @@
-import { Finder } from '../types';
+import { ArrayIterator } from '../types';
 
-export function findBy<T>(array: T[], finder: Finder<T>): T | undefined {
+export function findBy<T>(array: T[], iterator: ArrayIterator<T>): T | undefined {
     for (let i = 0; i < array.length; i++) {
-        if (finder(array[i], i, array)) {
+        if (iterator(array[i], i, array)) {
             return array[i];
         }
     }
