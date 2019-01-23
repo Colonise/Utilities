@@ -1,5 +1,12 @@
 Changelog
 
+## [2.2.1](https://github.com/Colonise/Utilities/compare/v2.2.0...v2.2.1) (2019-01-23)
+
+
+### Bug Fixes
+
+* **Constructor:** remove `name` property to fix es5 and es6+ types ([28acab0](https://github.com/Colonise/Utilities/commit/28acab0))
+
 # [2.2.0](https://github.com/Colonise/Utilities/compare/v2.1.0...v2.2.0) (2018-11-25)
 
 
