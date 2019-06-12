@@ -56,10 +56,10 @@ export function extract<
     property5: TProperty5
 ):
     | Defined<
-          Defined<
-              Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-          >[TProperty5]
-      >
+        Defined<
+            Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+        >[TProperty5]
+    >
     | undefined;
 export function extract<
     TObject,
@@ -83,12 +83,12 @@ export function extract<
     property6: TProperty6
 ):
     | Defined<
-          Defined<
-              Defined<
-                  Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-              >[TProperty5]
-          >[TProperty6]
-      >
+        Defined<
+            Defined<
+                Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+            >[TProperty5]
+        >[TProperty6]
+    >
     | undefined;
 export function extract<
     TObject,
@@ -120,14 +120,14 @@ export function extract<
     property7: TProperty7
 ):
     | Defined<
-          Defined<
-              Defined<
-                  Defined<
-                      Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-                  >[TProperty5]
-              >[TProperty6]
-          >[TProperty7]
-      >
+        Defined<
+            Defined<
+                Defined<
+                    Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                >[TProperty5]
+            >[TProperty6]
+        >[TProperty7]
+    >
     | undefined;
 export function extract<
     TObject,
@@ -169,16 +169,16 @@ export function extract<
     property8: TProperty8
 ):
     | Defined<
-          Defined<
-              Defined<
-                  Defined<
-                      Defined<
-                          Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-                      >[TProperty5]
-                  >[TProperty6]
-              >[TProperty7]
-          >[TProperty8]
-      >
+        Defined<
+            Defined<
+                Defined<
+                    Defined<
+                        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                    >[TProperty5]
+                >[TProperty6]
+            >[TProperty7]
+        >[TProperty8]
+    >
     | undefined;
 export function extract<
     TObject,
@@ -232,21 +232,22 @@ export function extract<
     property9: TProperty9
 ):
     | Defined<
-          Defined<
-              Defined<
-                  Defined<
-                      Defined<
-                          Defined<
-                              Defined<
-                                  Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]
-                              >[TProperty4]
-                          >[TProperty5]
-                      >[TProperty6]
-                  >[TProperty7]
-              >[TProperty8]
-          >[TProperty9]
-      >
+        Defined<
+            Defined<
+                Defined<
+                    Defined<
+                        Defined<
+                            Defined<
+                                Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]
+                            >[TProperty4]
+                        >[TProperty5]
+                    >[TProperty6]
+                >[TProperty7]
+            >[TProperty8]
+        >[TProperty9]
+    >
     | undefined;
+export function extract<TResult = unknown>(object: unknown, ...properties: string[]): Defined<TResult> | undefined;
 export function extract(object: unknown, ...properties: string[]): unknown {
     // TSLint seems to think `typeof object == null` is always false
     // tslint:disable-next-line:strict-type-predicates
