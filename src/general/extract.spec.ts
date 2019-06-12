@@ -23,7 +23,7 @@ export class CopyTests {
     @TestCase({ a: { a: { a: { a: { a: { a: 1 } } } } } }, ['a', 'a', 'a', 'a', 'a', 'a'], 1)
     @Test('extract() should extract a value from an object if all properties in the chain are not null nor undefined')
     public extract1(object: unknown, properties: string[], expected: unknown) {
-        const actual = extract.apply(null, [object, ...properties]);
+        const actual = extract(object, ...properties);
 
         Expect(actual).toBe(expected);
     }
@@ -38,7 +38,7 @@ export class CopyTests {
     public extract2(object: unknown, properties: string[]) {
         const expected = undefined;
 
-        const actual = extract.apply(null, [object, ...properties]);
+        const actual = extract(object, ...properties);
 
         Expect(actual).toBe(expected);
     }
