@@ -1,3 +1,5 @@
+import { toString } from '../types';
+
 export function toUpperCase(value: string): string {
-    return String(value).toUpperCase();
+    return toString(value).toUpperCase();
 }
