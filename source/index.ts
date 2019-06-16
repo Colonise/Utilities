@@ -1,4 +1,4 @@
-export * from './array';
-export * from './general';
-export * from './string';
+export * from './arrays';
+export * from './objects';
+export * from './strings';
 export * from './types';
