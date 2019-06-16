@@ -1,3 +1,5 @@
+import { toString } from '../types';
+
 export function toLowerCase(value: string): string {
-    return String(value).toLowerCase();
+    return toString(value).toLowerCase();
 }
