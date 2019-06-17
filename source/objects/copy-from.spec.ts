@@ -1,11 +1,11 @@
 import { IgnoreTest, Test, TestFixture } from 'alsatian';
 
-@TestFixture('copyTo() Tests')
-export class CopyToTests {
+@TestFixture('copyFrom() Tests')
+export class CopyFromTests {
     @IgnoreTest('TODO')
-    @Test('copyTo()')
+    @Test('copyFrom()')
     // @ts-ignore: Allow unused parameter for ignored test
-    public copyTo1<T>(array: T[], expected: T, item: T) {
+    public copyFrom1<T>(array: T[], expected: T, item: T) {
         //
     }
 }
