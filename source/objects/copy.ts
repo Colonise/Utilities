@@ -1,5 +1,5 @@
-import { copyTo } from './copy-to';
+import { copyFrom } from './copy-from';
 
 export function copy<T>(object: T): T {
-    return copyTo(object, <T>{});
+    return copyFrom(<T>{}, object);
 }
