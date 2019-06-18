@@ -1,1 +1,3 @@
-export type NumberDictionary<T> = { [key: number]: T };
+export interface NumberDictionary<T> {
+    [key: number]: T;
+}
