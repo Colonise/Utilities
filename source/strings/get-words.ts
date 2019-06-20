@@ -37,7 +37,7 @@ export interface GetWordsOptions {
     pascalCaseAsSeparator?: boolean;
 }
 
-const defaultGetWordOptions: GetWordsOptions = {
+const defaultGetWordsOptions: GetWordsOptions = {
     letters: {
         'a': true,
         'b': true,
@@ -168,7 +168,7 @@ export function getWords(value: string): string[];
 export function getWords(value: string, options: GetWordsOptions): string[];
 export function getWords(_value: string, _options: GetWordsOptions = {}): string[] {
     const value = toString(_value);
-    const options = copy(defaultGetWordOptions, _options);
+    const options = copy(defaultGetWordsOptions, _options);
 
     const result: string[] = [];
     let currentWord = '';
