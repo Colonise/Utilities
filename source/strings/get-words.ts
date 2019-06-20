@@ -27,6 +27,14 @@ export interface GetWordsOptions {
      *  - NUL: \0
      */
     separators?: StringDictionary<boolean>;
+    /**
+     * Enable detecting words not separated by a character, but each word starts with an upper case character. (PascalCase).
+     *
+     * This will treat the each upper case character as the start of a new word, and therefore, the end of the previous word.
+     *
+     * Default false.
+     */
+    pascalCaseAsSeparator?: boolean;
 }
 
 const defaultGetWordOptions: GetWordsOptions = {
@@ -100,19 +108,60 @@ const defaultGetWordOptions: GetWordsOptions = {
         '\n': true,
         '\r': true,
         '\0': true
-    }
+    },
+    pascalCaseAsSeparator: false
 };
 
-function filterWord(word: string, letters: StringDictionary<boolean>): string {
-    let filteredWord = '';
+const upperCaseLetters: StringDictionary<boolean> = {
+    'A': true,
+    'B': true,
+    'C': true,
+    'D': true,
+    'E': true,
+    'F': true,
+    'G': true,
+    'H': true,
+    'I': true,
+    'J': true,
+    'K': true,
+    'L': true,
+    'M': true,
+    'N': true,
+    'O': true,
+    'P': true,
+    'Q': true,
+    'R': true,
+    'S': true,
+    'T': true,
+    'U': true,
+    'V': true,
+    'W': true,
+    'X': true,
+    'Y': true,
+    'Z': true
+};
 
-    for (let i = 0; i < word.length; i++) {
-        if (letters[word[i]]) {
-            filteredWord += word[i];
-        }
+enum CharacterType {
+    Letter,
+    UpperCaseLetter,
+    Separator,
+    Ignore
+}
+
+function isUpperCaseLetter(letter: string): boolean {
+    return upperCaseLetters[letter[0]];
+}
+
+function getCharacterType(character: string, options: GetWordsOptions): CharacterType {
+    if (options.letters && options.letters[character]) {
+        return options.pascalCaseAsSeparator && isUpperCaseLetter(character)
+            ? CharacterType.UpperCaseLetter
+            : CharacterType.Letter;
+    } else if (options.separators && options.separators[character]) {
+        return CharacterType.Separator;
+    } else {
+        return CharacterType.Ignore;
     }
-
-    return filteredWord;
 }
 
 export function getWords(value: string): string[];
@@ -120,43 +169,43 @@ export function getWords(value: string, options: GetWordsOptions): string[];
 export function getWords(_value: string, _options: GetWordsOptions = {}): string[] {
     const value = toString(_value);
     const options = copy(defaultGetWordOptions, _options);
-    const letters = options.letters || {};
-    const separators = options.separators || {};
 
     const result: string[] = [];
-    let lastCharacterWasSeparator = false;
-    let currentWordStart = 0;
-    let currentWordEnd = 0;
+    let currentWord = '';
 
     for (let i = 0; i < value.length; i++) {
         const character = value[i];
-        const currentCharacterIsSeparator = separators[character];
-        const isEndOfString = i === value.length - 1;
+        const currentCharacterType = getCharacterType(character, options);
 
-        let foundWord = false;
+        switch (currentCharacterType) {
+            case CharacterType.Separator:
+                if (currentWord.length > 0) {
+                    result.push(currentWord);
+                }
 
-        if (lastCharacterWasSeparator && !currentCharacterIsSeparator) {
-            currentWordStart = i;
+                currentWord = '';
+                break;
+
+            case CharacterType.UpperCaseLetter:
+                if (currentWord.length > 0) {
+                    result.push(currentWord);
+                }
+
+                currentWord = character;
+                break;
+
+            case CharacterType.Letter:
+                currentWord += character;
+                break;
+
+            case CharacterType.Ignore:
+            default:
         }
 
-        if (!lastCharacterWasSeparator && currentCharacterIsSeparator) {
-            currentWordEnd = i - 1;
-            foundWord = true;
+        // If we are at the end of the string and have a word, add it
+        if (i === value.length - 1 && currentWord.length > 0) {
+            result.push(currentWord);
         }
-
-        if (isEndOfString) {
-            currentWordEnd = i;
-            foundWord = true;
-        }
-
-        if (foundWord) {
-            const word = value.slice(currentWordStart, currentWordEnd + 1);
-            const filteredWord = filterWord(word, letters);
-
-            result.push(filteredWord);
-        }
-
-        lastCharacterWasSeparator = currentCharacterIsSeparator;
     }
 
     return result;
