@@ -4,4 +4,5 @@ export * from './to-dot-case';
 export * from './to-hyphen-case';
 export * from './to-lower-case';
 export * from './to-pascal-case';
+export * from './to-snake-case';
 export * from './to-upper-case';
