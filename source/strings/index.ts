@@ -1,3 +1,4 @@
+export * from './capitalise';
 export * from './get-words';
 export * from './to-camel-case';
 export * from './to-dot-case';
