@@ -1,8 +1,8 @@
-import { StringDictionary } from '../types';
-import { GetWordsOptions, getWords } from './get-words';
-import { toLowerCase } from './to-lower-case';
 import { copy } from '../objects';
+import { StringDictionary } from '../types';
 import { capitalise } from './capitalise';
+import { getWords, GetWordsOptions } from './get-words';
+import { toLowerCase } from './to-lower-case';
 
 export interface ToTitleCaseOptions extends GetWordsOptions {
     lowerCaseWords?: StringDictionary<boolean>;
