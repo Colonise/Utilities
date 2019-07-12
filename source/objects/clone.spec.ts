@@ -1,4 +1,6 @@
 import { Expect, Test, TestCase, TestFixture } from 'alsatian';
+import { Constructor } from '../types';
+import { InstanceOf } from '../types/instance-of';
 import { clone } from './clone';
 
 class TestingClass {
@@ -21,6 +23,6 @@ export class CloneTests {
         const actual = clone(object);
 
         Expect(actual).toEqual(expected);
-        Expect(actual instanceof expected.constructor).toBe(true);
+        Expect(actual instanceof (<InstanceOf<Constructor<T>>>expected).constructor).toBe(true);
     }
 }

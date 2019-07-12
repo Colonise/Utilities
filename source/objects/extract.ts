@@ -83,6 +83,7 @@ export function extract<
     property6: TProperty6
 ):
     | Defined<
+        // @ts-ignore
         Defined<
             Defined<
                 Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
@@ -103,6 +104,7 @@ export function extract<
         Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]>[TProperty5]
     >,
     TProperty7 extends keyof Defined<
+        // @ts-ignore
         Defined<
             Defined<
                 Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
@@ -142,6 +144,7 @@ export function extract<
         Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]>[TProperty5]
     >,
     TProperty7 extends keyof Defined<
+        // @ts-ignore
         Defined<
             Defined<
                 Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
@@ -193,6 +196,7 @@ export function extract<
         Defined<Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]>[TProperty5]
     >,
     TProperty7 extends keyof Defined<
+        // @ts-ignore
         Defined<
             Defined<
                 Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
