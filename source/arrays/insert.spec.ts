@@ -1,21 +1,62 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { insert } from './insert';
+import { expect } from 'chai';
 
-@TestFixture('insert() Tests')
-export class InsertTests {
-    @TestCase(['a', 'b', 'd', 'e'], ['a', 'b', 'c', 'd', 'e'], 2, 'c')
-    @Test('insert<T>(array: T[], index: number, item: T) should insert an item into an array')
-    public insert1<T>(array: T[], expected: T[], index: number, item: T) {
-        const actual = insert(array, index, item);
+describe('insert() Tests', () => {
+    it('insert<T>(array: T[], index: number, item: T) should insert an item into an array', () => {
+        const testCases = [
+            {
+                array: [
+                    'a',
+                    'b',
+                    'd',
+                    'e'
+                ],
+                expected: [
+                    'a',
+                    'b',
+                    'c',
+                    'd',
+                    'e'
+                ],
+                index: 2,
+                item: 'c'
+            }
+        ];
 
-        Expect(actual).toEqual(expected);
-    }
+        for (const { array, expected, index, item } of testCases) {
+            const actual = insert(array, index, item);
 
-    @TestCase(['a', 'b', 'e'], ['a', 'b', 'c', 'd', 'e'], 2, ['c', 'd'])
-    @Test('insert<T>(array: T[], index: number, items: T[]) should insert an array of items into an array')
-    public insert2<T>(array: T[], expected: T[], index: number, items: T[]) {
-        const actual = insert(array, index, items);
+            expect(actual).to.eql(expected);
+        }
+    });
 
-        Expect(actual).toEqual(expected);
-    }
-}
+    it('insert<T>(array: T[], index: number, items: T[]) should insert an array of items into an array', () => {
+        const testCases = [
+            {
+                array: [
+                    'a',
+                    'b',
+                    'e'
+                ],
+                expected: [
+                    'a',
+                    'b',
+                    'c',
+                    'd',
+                    'e'
+                ],
+                index: 2,
+                items: [
+                    'c',
+                    'd'
+                ]
+            }
+        ];
+
+        for (const { array, expected, index, items } of testCases) {
+            const actual = insert(array, index, items);
+
+            expect(actual).to.eql(expected);
+        }
+    });
+});

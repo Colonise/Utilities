@@ -1,10 +1,4 @@
-import { IgnoreTest, Test, TestFixture } from 'alsatian';
-
-@TestFixture('getOwnPropertyDescriptors() Tests')
-export class GetOwnPropertyDescriptorsTests {
-    @IgnoreTest('TODO')
-    @Test('getOwnPropertyDescriptors()')
-    public getOwnPropertyDescriptors1() {
-        //
-    }
-}
+describe('getOwnPropertyDescriptors() Tests', () => {
+    // tslint:disable-next-line: no-empty
+    it('getOwnPropertyDescriptors()', () => {});
+});

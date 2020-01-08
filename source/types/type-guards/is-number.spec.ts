@@ -1,17 +1,20 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isNumber } from './is-number';
+import { expect } from 'chai';
 
-@TestFixture('isNumber() Tests')
-export class IsNumberTests {
-    @TestCase(1, true)
-    @TestCase(0, true)
-    @TestCase(NaN, true)
-    @TestCase([], false)
-    @TestCase({}, false)
-    @Test('isNumber(object: unknown) should check if a variable is a number')
-    public isNumber1(object: unknown, expected: boolean) {
-        const actual = isNumber(object);
+describe('isNumber() Tests', () => {
+    it('isNumber(object: unknown) should check if a variable is a number', () => {
+        const testCases = [
+            { object: 1, expected: true },
+            { object: 0, expected: true },
+            { object: NaN, expected: true },
+            { object: [], expected: false },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isNumber(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

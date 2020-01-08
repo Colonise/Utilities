@@ -1,10 +1,8 @@
-import { Expect, Test, TestFixture } from 'alsatian';
 import { Constructor } from './constructor';
+import { expect } from 'chai';
 
-@TestFixture('Constructor<T> Tests')
-export class ConstructorTests {
-    @Test('Constructor<T> should have correct intellisense')
-    public constructor1() {
+describe('Constructor<T> Tests', () => {
+    it('Constructor<T> should have correct intellisense', () => {
         const stringConstructor = <Constructor<String>>String;
         const booleanConstructor = <Constructor<Boolean>>Boolean;
         const numberConstructor = <Constructor<Number>>Number;
@@ -12,11 +10,11 @@ export class ConstructorTests {
         const objectConstructor = <Constructor<Object>>Object;
         const arrayConstructor = <Constructor<unknown[]>>Array;
 
-        Expect(stringConstructor).toBeDefined();
-        Expect(booleanConstructor).toBeDefined();
-        Expect(numberConstructor).toBeDefined();
-        Expect(regExpConstructor).toBeDefined();
-        Expect(objectConstructor).toBeDefined();
-        Expect(arrayConstructor).toBeDefined();
-    }
-}
+        expect(stringConstructor).to.exist;
+        expect(booleanConstructor).to.exist;
+        expect(numberConstructor).to.exist;
+        expect(regExpConstructor).to.exist;
+        expect(objectConstructor).to.exist;
+        expect(arrayConstructor).to.exist;
+    });
+});

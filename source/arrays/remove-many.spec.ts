@@ -1,13 +1,33 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { removeMany } from './remove-many';
+import { expect } from 'chai';
 
-@TestFixture('removeMany() Tests')
-export class RemoveManyTests {
-    @TestCase(['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'e'], ['c', 'd'])
-    @Test('removeMany<T>(array: T[], items: T[]) should remove an array of items from an array')
-    public removeMany1<T>(array: T[], expected: T[], items: T[]) {
-        const actual = removeMany(array, items);
+describe('removeMany() Tests', () => {
+    const testCases = [
+        {
+            array: [
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            expected: [
+                'a',
+                'b',
+                'e'
+            ],
+            items: [
+                'c',
+                'd'
+            ]
+        }
+    ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+    it('removeMany<T>(array: T[], items: T[]) should remove an array of items from an array', () => {
+        for (const { array, expected, items } of testCases) {
+            const actual = removeMany(array, items);
+
+            expect(actual).to.eql(expected);
+        }
+    });
+});

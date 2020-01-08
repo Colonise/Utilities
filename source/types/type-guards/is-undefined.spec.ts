@@ -1,15 +1,18 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isUndefined } from './is-undefined';
+import { expect } from 'chai';
 
-@TestFixture('isUndefined() Tests')
-export class IsUndefinedTests {
-    @TestCase(undefined, true)
-    @TestCase([], false)
-    @TestCase({}, false)
-    @Test('isUndefined(object: unknown) should check if a variable is undefined')
-    public isUndefined1(object: unknown, expected: boolean) {
-        const actual = isUndefined(object);
+describe('isUndefined() Tests', () => {
+    it('isUndefined(object: unknown) should check if a variable is undefined', () => {
+        const testCases = [
+            { object: undefined, expected: true },
+            { object: [], expected: false },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isUndefined(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

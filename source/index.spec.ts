@@ -1,10 +1,8 @@
-import { Expect, Test, TestFixture } from 'alsatian';
 import * as utilities from './';
+import { expect } from 'chai';
 
-@TestFixture('Utilities Tests')
-export class UtilitiesTests {
-    @Test('utilities')
-    public utilities1() {
-        Expect(utilities).toBeDefined();
-    }
-}
+describe('Utilities Tests', () => {
+    it('utilities', () => {
+        expect(utilities).to.exist;
+    });
+});

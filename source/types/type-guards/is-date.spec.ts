@@ -1,14 +1,17 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isDate } from './is-date';
+import { expect } from 'chai';
 
-@TestFixture('isDate() Tests')
-export class IsDateTests {
-    @TestCase(new Date(), true)
-    @TestCase({}, false)
-    @Test('isDate(object: unknown) should check if a variable is a Date')
-    public isDate1(object: unknown, expected: boolean) {
-        const actual = isDate(object);
+describe('isDate() Tests', () => {
+    it('isDate(object: unknown) should check if a variable is a Date', () => {
+        const testCases = [
+            { object: new Date(), expected: true },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isDate(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

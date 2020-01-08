@@ -1,15 +1,18 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isNull } from './is-null';
+import { expect } from 'chai';
 
-@TestFixture('isNull() Tests')
-export class IsNullTests {
-    @TestCase(null, true)
-    @TestCase([], false)
-    @TestCase({}, false)
-    @Test('isNull(object: unknown) should check if a variable is null')
-    public isNull1(object: unknown, expected: boolean) {
-        const actual = isNull(object);
+describe('isNull() Tests', () => {
+    it('isNull(object: unknown) should check if a variable is null', () => {
+        const testCases = [
+            { object: null, expected: true },
+            { object: [], expected: false },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isNull(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

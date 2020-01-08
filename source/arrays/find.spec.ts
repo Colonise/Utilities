@@ -1,14 +1,37 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { find } from './find';
+import { expect } from 'chai';
 
-@TestFixture('find() Tests')
-export class FindTests {
-    @TestCase(['a', 'b', 'c', 'd', 'e'], 'c', 'c')
-    @TestCase(['a', 'b', 'c', 'd', 'e'], undefined, 'f')
-    @Test('find<T>(array: T[], item: T) should return an item')
-    public find1<T>(array: T[], expected: T, item: T) {
-        const actual = find(array, item);
+describe('find() Tests', () => {
+    const testCases = [
+        {
+            array: [
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            expected: 'c',
+            item: 'c'
+        },
+        {
+            array: [
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            expected: undefined,
+            item: 'f'
+        }
+    ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+    it('find<T>(array: T[], item: T) should return an item', () => {
+        for (const { array, expected, item } of testCases) {
+            const actual = find(array, item);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

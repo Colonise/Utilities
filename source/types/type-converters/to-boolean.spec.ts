@@ -1,24 +1,27 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { toBoolean } from './to-boolean';
+import { expect } from 'chai';
 
-@TestFixture('toBoolean() Tests')
-export class ToBooleanTests {
-    @TestCase(true, true)
-    @TestCase(false, false)
-    @TestCase(1, true)
-    @TestCase(0, false)
-    @TestCase(-1, true)
-    @TestCase(NaN, false)
-    @TestCase('', false)
-    @TestCase('a', true)
-    @TestCase([], true)
-    @TestCase({}, true)
-    @TestCase(null, false)
-    @TestCase(undefined, false)
-    @Test('toBoolean(object: unknown) should convert an object to a boolean')
-    public toBoolean1(array: unknown[], expected: boolean) {
-        const actual = toBoolean(array);
+describe('toBoolean() Tests', () => {
+    const testCases = [
+        { object: true, expected: true },
+        { object: false, expected: false },
+        { object: 1, expected: true },
+        { object: 0, expected: false },
+        { object: -1, expected: true },
+        { object: NaN, expected: false },
+        { object: '', expected: false },
+        { object: 'a', expected: true },
+        { object: [], expected: true },
+        { object: {}, expected: true },
+        { object: null, expected: false },
+        { object: undefined, expected: false }
+    ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+    it('toBoolean(object: unknown) should convert an object to a boolean', () => {
+        for (const { object, expected } of testCases) {
+            const actual = toBoolean(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

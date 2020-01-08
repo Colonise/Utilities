@@ -1,13 +1,26 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { findIndex } from './find-index';
+import { expect } from 'chai';
 
-@TestFixture('findIndex() Tests')
-export class FindIndexTests {
-    @TestCase(['a', 'b', 'c', 'd', 'e'], -1, 'f')
-    @Test('findIndex<T>(array: T[], item: T) should return the index of an item')
-    public findIndex1<T>(array: T[], expected: T, item: T) {
-        const actual = findIndex(array, item);
+describe('findIndex() Tests', () => {
+    it('findIndex<T>(array: T[], item: T) should return the index of an item', () => {
+        const testCases = [
+            {
+                array: [
+                    'a',
+                    'b',
+                    'c',
+                    'd',
+                    'e'
+                ],
+                expected: -1,
+                item: 'f'
+            }
+        ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+        for (const { array, expected, item } of testCases) {
+            const actual = findIndex(array, item);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

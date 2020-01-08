@@ -1,15 +1,18 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isRegExp } from './is-reg-exp';
+import { expect } from 'chai';
 
-@TestFixture('isRegExp() Tests')
-export class IsRegExpTests {
-    @TestCase(/a/, true)
-    @TestCase(new RegExp('a'), true)
-    @TestCase({}, false)
-    @Test('isRegExp(object: unknown) should check if a variable is a RegExp')
-    public isRegExp1(object: unknown, expected: boolean) {
-        const actual = isRegExp(object);
+describe('isRegExp() Tests', () => {
+    it('isRegExp(object: unknown) should check if a variable is a RegExp', () => {
+        const testCases = [
+            { object: /a/, expected: true },
+            { object: new RegExp('a'), expected: true },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isRegExp(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

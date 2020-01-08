@@ -1,51 +1,161 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { getWords } from './get-words';
+import { expect } from 'chai';
 
-@TestFixture('getWords() Tests')
-export class GetWordsTests {
-    @TestCase('abc def g h i', ['abc', 'def', 'g', 'h', 'i'])
-    @Test('getWords(value: string) should get the words from a string')
-    public getWords1(value: string, expected: string[]) {
-        const actual = getWords(value);
+describe('getWords() Tests', () => {
+    it('getWords(value: string) should get the words from a string', () => {
+        const testCases = [
+            {
+                value: 'abc def g h i',
+                expected: [
+                    'abc',
+                    'def',
+                    'g',
+                    'h',
+                    'i'
+                ]
+            }
+        ];
 
-        Expect(actual).toEqual(expected);
-    }
+        for (const { value, expected } of testCases) {
+            const actual = getWords(value);
 
-    @TestCase('abc    def     g    h       i', ['abc', 'def', 'g', 'h', 'i'])
-    @TestCase('abc    def     g    h    \t\t\t\r\r\r\n\n\n\n\n\n\r\n\r\n\r\n    i ', ['abc', 'def', 'g', 'h', 'i'])
-    @Test('getWords(value: string) should handle large contiguous separators')
-    public getWords2(value: string, expected: string[]) {
-        const actual = getWords(value);
+            expect(actual).to.eql(expected);
+        }
+    });
 
-        Expect(actual).toEqual(expected);
-    }
+    it('getWords(value: string) should handle large contiguous separators', () => {
+        const testCases = [
+            {
+                value: 'abc    def     g    h       i',
+                expected: [
+                    'abc',
+                    'def',
+                    'g',
+                    'h',
+                    'i'
+                ]
+            },
+            {
+                value: 'abc    def     g    h    \t\t\t\r\r\r\n\n\n\n\n\n\r\n\r\n\r\n    i ',
+                expected: [
+                    'abc',
+                    'def',
+                    'g',
+                    'h',
+                    'i'
+                ]
+            }
+        ];
+        for (const { value, expected } of testCases) {
+            const actual = getWords(value);
 
-    @TestCase('abc%$ def"" g h- i/', ['abc', 'def', 'g', 'h', 'i'])
-    @TestCase('abc!@ def\'\' g_ h?, i;.,', ['abc', 'def', 'g', 'h', 'i'])
-    @Test('getWords(value: string) should ignore characters not in separators or letters')
-    public getWords3(value: string, expected: string[]) {
-        const actual = getWords(value);
+            expect(actual).to.eql(expected);
+        }
+    });
 
-        Expect(actual).toEqual(expected);
-    }
+    it('getWords(value: string) should ignore characters not in separators or letters', () => {
+        const testCases = [
+            {
+                value: 'abc%$ def"" g h- i/',
+                expected: [
+                    'abc',
+                    'def',
+                    'g',
+                    'h',
+                    'i'
+                ]
+            },
+            {
+                value: `abc!@ def'' g_ h?, i;.,`,
+                expected: [
+                    'abc',
+                    'def',
+                    'g',
+                    'h',
+                    'i'
+                ]
+            }
+        ];
+        for (const { value, expected } of testCases) {
+            const actual = getWords(value);
 
-    @TestCase('abCdeFGHi', ['ab', 'Cde', 'F', 'G', 'Hi'])
-    @TestCase('ab Cde F G Hi', ['ab', 'Cde', 'F', 'G', 'Hi'])
-    @TestCase('ab CdeF GHi', ['ab', 'Cde', 'F', 'G', 'Hi'])
-    @TestCase('ABCDEFGHI', ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'])
-    @TestCase('abcdefghi', ['abcdefghi'])
-    @Test('getWords(value: string, { pascalCaseAsSeparator: true }) should separate words by upper case letters when')
-    public getWords4(value: string, expected: string[]) {
-        const actual = getWords(value, { pascalCaseAsSeparator: true });
+            expect(actual).to.eql(expected);
+        }
+    });
 
-        Expect(actual).toEqual(expected);
-    }
+    it('getWords(value: string, { pascalCaseAsSeparator: true }) should separate words by upper case letters when', () => {
+        const testCases = [
+            {
+                value: 'abCdeFGHi',
+                expected: [
+                    'ab',
+                    'Cde',
+                    'F',
+                    'G',
+                    'Hi'
+                ]
+            },
+            {
+                value: 'ab Cde F G Hi',
+                expected: [
+                    'ab',
+                    'Cde',
+                    'F',
+                    'G',
+                    'Hi'
+                ]
+            },
+            {
+                value: 'ab CdeF GHi',
+                expected: [
+                    'ab',
+                    'Cde',
+                    'F',
+                    'G',
+                    'Hi'
+                ]
+            },
+            {
+                value: 'ABCDEFGHI',
+                expected: [
+                    'A',
+                    'B',
+                    'C',
+                    'D',
+                    'E',
+                    'F',
+                    'G',
+                    'H',
+                    'I'
+                ]
+            },
+            {
+                value: 'abcdefghi',
+                expected: [
+                    'abcdefghi'
+                ]
+            }
+        ];
+        for (const { value, expected } of testCases) {
+            const actual = getWords(value, { pascalCaseAsSeparator: true });
 
-    @TestCase('abCdeFGHi', ['abCdeFGHi'])
-    @Test('getWords(value: string, { pascalCaseAsSeparator: false }) should not separate words by upper case letters when')
-    public getWords5(value: string, expected: string[]) {
-        const actual = getWords(value, { pascalCaseAsSeparator: false });
+            expect(actual).to.eql(expected);
+        }
+    });
 
-        Expect(actual).toEqual(expected);
-    }
-}
+    it('getWords(value: string, { pascalCaseAsSeparator: false }) should not separate words by upper case letters when', () => {
+        const testCases = [
+            {
+                value: 'abCdeFGHi',
+                expected: [
+                    'abCdeFGHi'
+                ]
+            }
+        ];
+        for (const { value, expected } of testCases) {
+            const actual = getWords(value, { pascalCaseAsSeparator: false });
+
+            expect(actual).to.eql(expected);
+        }
+    });
+});

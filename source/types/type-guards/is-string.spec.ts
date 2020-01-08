@@ -1,15 +1,18 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isString } from './is-string';
+import { expect } from 'chai';
 
-@TestFixture('isString() Tests')
-export class IsStringTests {
-    @TestCase('a', true)
-    @TestCase([], false)
-    @TestCase({}, false)
-    @Test('isString(object: unknown) should check if a variable is a string')
-    public isString1(object: unknown, expected: boolean) {
-        const actual = isString(object);
+describe('isString() Tests', () => {
+    it('isString(object: unknown) should check if a variable is a string', () => {
+        const testCases = [
+            { object: 'a', expected: true },
+            { object: [], expected: false },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isString(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

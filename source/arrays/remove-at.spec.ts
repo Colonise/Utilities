@@ -1,15 +1,31 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { removeAt } from './remove-at';
+import { expect } from 'chai';
 
-@TestFixture('removeAt() Tests')
-export class RemoveAtTests {
-    @TestCase(['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'e'], 2, 2)
-    @Test(
-        'removeAt<T>(array: T[], index: number, count?: number) should remove a count of items from an array by an index'
-    )
-    public remove1<T>(array: T[], expected: T[], index: number, count: number) {
-        const actual = removeAt(array, index, count);
+describe('removeAt() Tests', () => {
+    it('removeAt<T>(array: T[], index: number, count?: number) should remove a count of items from an array by an index', () => {
+        const testCases = [
+            {
+                array: [
+                    'a',
+                    'b',
+                    'c',
+                    'd',
+                    'e'
+                ],
+                expected: [
+                    'a',
+                    'b',
+                    'e'
+                ],
+                index: 2,
+                count: 2
+            }
+        ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+        for (const { array, expected, index, count } of testCases) {
+            const actual = removeAt(array, index, count);
+
+            expect(actual).to.eql(expected);
+        }
+    });
+});
