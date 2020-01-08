@@ -1,16 +1,19 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isObject } from './is-object';
+import { expect } from 'chai';
 
-@TestFixture('isObject() Tests')
-export class IsObjectTests {
-    @TestCase([], true)
-    @TestCase({}, true)
-    @TestCase(null, false)
-    @TestCase(1, false)
-    @Test('isObject(object: unknown) should check if a variable is a object')
-    public isObject1(object: unknown, expected: boolean) {
-        const actual = isObject(object);
+describe('isObject() Tests', () => {
+    it('isObject(object: unknown) should check if a variable is a object', () => {
+        const testCases = [
+            { object: [], expected: true },
+            { object: {}, expected: true },
+            { object: null, expected: false },
+            { object: 1, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isObject(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

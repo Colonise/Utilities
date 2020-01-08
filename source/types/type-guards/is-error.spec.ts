@@ -1,20 +1,23 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isError } from './is-error';
+import { expect } from 'chai';
 
-@TestFixture('isError() Tests')
-export class IsErrorTests {
-    @TestCase(new Error(), true)
-    @TestCase(new EvalError(), true)
-    @TestCase(new RangeError(), true)
-    @TestCase(new ReferenceError(), true)
-    @TestCase(new SyntaxError(), true)
-    @TestCase(new TypeError(), true)
-    @TestCase(new URIError(), true)
-    @TestCase({}, false)
-    @Test('isError(object: unknown) should check if a variable is an Error')
-    public isError1(object: unknown, expected: boolean) {
-        const actual = isError(object);
+describe('isError() Tests', () => {
+    it('isError(object: unknown) should check if a variable is an Error', () => {
+        const testCases = [
+            { object: new Error(), expected: true },
+            { object: new EvalError(), expected: true },
+            { object: new RangeError(), expected: true },
+            { object: new ReferenceError(), expected: true },
+            { object: new SyntaxError(), expected: true },
+            { object: new TypeError(), expected: true },
+            { object: new URIError(), expected: true },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isError(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

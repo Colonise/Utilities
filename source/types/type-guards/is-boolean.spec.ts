@@ -1,16 +1,19 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isBoolean } from './is-boolean';
+import { expect } from 'chai';
 
-@TestFixture('isBoolean() Tests')
-export class IsBooleanTests {
-    @TestCase(true, true)
-    @TestCase(false, true)
-    @TestCase([], false)
-    @TestCase({}, false)
-    @Test('isBoolean(object: unknown) should check if a variable is a boolean')
-    public isBoolean1(object: unknown, expected: boolean) {
-        const actual = isBoolean(object);
+describe('isBoolean() Tests', () => {
+    it('isBoolean(object: unknown) should check if a variable is a boolean', () => {
+        const testCases = [
+            { object: true, expected: true },
+            { object: false, expected: true },
+            { object: [], expected: false },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isBoolean(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

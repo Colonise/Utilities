@@ -1,7 +1,7 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { Constructor } from '../types';
 import { InstanceOf } from '../types/instance-of';
 import { clone } from './clone';
+import { expect } from 'chai';
 
 class TestingClass {
     public c = this.a + this.b;
@@ -13,16 +13,35 @@ class TestingClass {
     }
 }
 
-@TestFixture('clone() Tests')
-export class CloneTests {
-    @TestCase({ a: 1, b: 2, c: 3 }, { a: 1, b: 2, c: 3 })
-    @TestCase(['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'c', 'd', 'e'])
-    @TestCase(new TestingClass(1, 2), new TestingClass(1, 2))
-    @Test('clone<T>(object: T) should clone an object')
-    public clone1<T>(object: T, expected: T) {
-        const actual = clone(object);
+describe('clone() Tests', () => {
+    const testCases: { object: unknown; expected: unknown }[] = [
+        { object: { a: 1, b: 2, c: 3 }, expected: { a: 1, b: 2, c: 3 } },
+        {
+            object: [
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            expected: [
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ]
+        },
+        { object: new TestingClass(1, 2), expected: new TestingClass(1, 2) }
+    ];
 
-        Expect(actual).toEqual(expected);
-        Expect(actual instanceof (<InstanceOf<Constructor<T>>>expected).constructor).toBe(true);
-    }
-}
+    it('clone<T>(object: T) should clone an object', () => {
+        for (const { object, expected } of testCases) {
+            const actual = clone(object);
+
+            expect(actual).to.eql(expected);
+            // tslint:disable-next-line: no-unused-expression
+            expect(actual instanceof (<InstanceOf<Constructor>>expected).constructor).to.be.true;
+        }
+    });
+});

@@ -1,14 +1,17 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isArray } from './is-array';
+import { expect } from 'chai';
 
-@TestFixture('isArray() Tests')
-export class IsArrayTests {
-    @TestCase([], true)
-    @TestCase({}, false)
-    @Test('isArray(object: unknown) should check if a variable is an array')
-    public isArray1(array: unknown[], expected: unknown) {
-        const actual = isArray(array);
+describe('isArray() Tests', () => {
+    it('isArray(object: unknown) should check if a variable is an array', () => {
+        const testCases = [
+            { object: [], expected: true },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isArray(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

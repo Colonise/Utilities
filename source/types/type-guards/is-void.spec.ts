@@ -1,16 +1,19 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { isVoid } from './is-void';
+import { expect } from 'chai';
 
-@TestFixture('isVoid() Tests')
-export class IsVoidTests {
-    @TestCase(undefined, true)
-    @TestCase(null, true)
-    @TestCase([], false)
-    @TestCase({}, false)
-    @Test('isVoid(object: unknown) should check if a variable is null or undefined')
-    public isVoid1(object: unknown, expected: boolean) {
-        const actual = isVoid(object);
+describe('isVoid() Tests', () => {
+    it('isVoid(object: unknown) should check if a variable is null or undefined', () => {
+        const testCases = [
+            { object: undefined, expected: true },
+            { object: null, expected: true },
+            { object: [], expected: false },
+            { object: {}, expected: false }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = isVoid(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

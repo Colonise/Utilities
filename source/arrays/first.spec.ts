@@ -1,14 +1,29 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { first } from './first';
+import { expect } from 'chai';
 
-@TestFixture('first() Tests')
-export class FirstTests {
-    @TestCase([], undefined)
-    @TestCase(['a', 'b', 'c', 'd', 'e'], 'a')
-    @Test('first<T>(array: T[]) should return the first item')
-    public first1<T>(array: T[], expected: T) {
-        const actual = first(array);
+describe('first() Tests', () => {
+    const testCases = [
+        {
+            array: [],
+            expected: undefined
+        },
+        {
+            array: [
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            expected: 'a'
+        }
+    ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+    it('first<T>(array: T[]) should return the first item', () => {
+        for (const { array, expected } of testCases) {
+            const actual = first(array);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

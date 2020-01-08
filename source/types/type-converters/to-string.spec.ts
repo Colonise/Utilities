@@ -1,25 +1,39 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { toString } from './to-string';
+import { expect } from 'chai';
 
-@TestFixture('toString() Tests')
-export class ToStringTests {
-    @TestCase(true, 'true')
-    @TestCase(1, '1')
-    @TestCase(0, '0')
-    @TestCase(-1, '-1')
-    @TestCase(NaN, 'NaN')
-    @TestCase('', '')
-    @TestCase('a', 'a')
-    @TestCase([], '')
-    @TestCase(['a'], 'a')
-    @TestCase(['a', 'b'], 'a,b')
-    @TestCase({}, '[object Object]')
-    @TestCase(null, 'null')
-    @TestCase(undefined, 'undefined')
-    @Test('toString(object: unknown) should convert an object to a string')
-    public toString1(array: unknown[], expected: string) {
-        const actual = toString(array);
+describe('toString() Tests', () => {
+    it('toString(object: unknown) should convert an object to a string', () => {
+        const testCases = [
+            { object: true, expected: 'true' },
+            { object: 1, expected: '1' },
+            { object: 0, expected: '0' },
+            { object: -1, expected: '-1' },
+            { object: NaN, expected: 'NaN' },
+            { object: '', expected: '' },
+            { object: 'a', expected: 'a' },
+            { object: [], expected: '' },
+            {
+                object: [
+                    'a'
+                ],
+                expected: 'a'
+            },
+            {
+                object: [
+                    'a',
+                    'b'
+                ],
+                expected: 'a,b'
+            },
+            { object: {}, expected: '[object Object]' },
+            { object: null, expected: 'null' },
+            { object: undefined, expected: 'undefined' }
+        ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+        for (const { object, expected } of testCases) {
+            const actual = toString(object);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

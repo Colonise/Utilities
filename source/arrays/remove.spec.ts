@@ -1,14 +1,49 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { remove } from './remove';
+import { expect } from 'chai';
 
-@TestFixture('remove() Tests')
-export class RemoveTests {
-    @TestCase(['a', 'b', 'c', 'd', 'e'], ['a', 'b', 'd', 'e'], 'c')
-    @TestCase(['a', 'a', 'a', 'b', 'c', 'd', 'e'], ['b', 'c', 'd', 'e'], 'a')
-    @Test('remove<T>(array: T[], item: T) should remove an item from an array')
-    public remove1<T>(array: T[], expected: T[], item: T) {
-        const actual = remove(array, item);
+describe('remove() Tests', () => {
+    const testCases = [
+        {
+            array: [
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            expected: [
+                'a',
+                'b',
+                'd',
+                'e'
+            ],
+            item: 'c'
+        },
+        {
+            array: [
+                'a',
+                'a',
+                'a',
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            expected: [
+                'b',
+                'c',
+                'd',
+                'e'
+            ],
+            item: 'a'
+        }
+    ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+    it('remove<T>(array: T[], item: T) should remove an item from an array', () => {
+        for (const { array, expected, item } of testCases) {
+            const actual = remove(array, item);
+
+            expect(actual).to.eql(expected);
+        }
+    });
+});

@@ -1,40 +1,98 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
-import { Constructor } from '../constructor';
 import { is } from './is';
+import { expect } from 'chai';
 
-@TestFixture('is() Tests')
-export class IsTests {
-    @TestCase({}, Object, true)
-    @TestCase([], Object, true)
-    @TestCase(1, Object, false)
-    @TestCase(1, Number, true)
-    @TestCase('a', Object, false)
-    @TestCase('a', String, true)
-    @TestCase(true, Object, false)
-    @TestCase(true, Boolean, true)
-    @Test(
-        'is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor'
-    )
-    public is1(object: unknown, constructor: Constructor, expected: boolean) {
-        const actual = is(object, constructor);
+describe('is() Tests', () => {
+    it('is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor', () => {
+        const testCases = [
+            { object: {}, constructor: Object, expected: true },
+            { object: [], constructor: Object, expected: true },
+            { object: 1, constructor: Object, expected: false },
+            { object: 1, constructor: Number, expected: true },
+            { object: 'a', constructor: Object, expected: false },
+            { object: 'a', constructor: String, expected: true },
+            { object: true, constructor: Object, expected: false },
+            { object: true, constructor: Boolean, expected: true }
+        ];
 
-        Expect(actual).toBe(expected);
-    }
+        for (const { object, constructor, expected } of testCases) {
+            const actual = is(object, constructor);
 
-    @TestCase({}, Array, Object, true)
-    @TestCase([], Array, Object, true)
-    @TestCase(1, Object, Object, false)
-    @TestCase(1, Object, Number, true)
-    @TestCase('a', Object, Object, false)
-    @TestCase('a', Object, String, true)
-    @TestCase(true, Object, Object, false)
-    @TestCase(true, Object, Boolean, true)
-    @Test(
-        'is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor'
-    )
-    public is2(object: unknown, constructor1: Constructor, constructor2: Constructor, expected: boolean) {
-        const actual = is(object, constructor1, constructor2);
+            expect(actual).to.equal(expected);
+        }
+    });
 
-        Expect(actual).toBe(expected);
-    }
-}
+    it('is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor', () => {
+        const testCases = [
+            {
+                object: {},
+                constructors: [
+                    Array,
+                    Object
+                ],
+                expected: true
+            },
+            {
+                object: [],
+                constructors: [
+                    Array,
+                    Object
+                ],
+                expected: true
+            },
+            {
+                object: 1,
+                constructors: [
+                    Object,
+                    Object
+                ],
+                expected: false
+            },
+            {
+                object: 1,
+                constructors: [
+                    Object,
+                    Number
+                ],
+                expected: true
+            },
+            {
+                object: 'a',
+                constructors: [
+                    Object,
+                    Object
+                ],
+                expected: false
+            },
+            {
+                object: 'a',
+                constructors: [
+                    Object,
+                    String
+                ],
+                expected: true
+            },
+            {
+                object: true,
+                constructors: [
+                    Object,
+                    Object
+                ],
+                expected: false
+            },
+            {
+                object: true,
+                constructors: [
+                    Object,
+                    Boolean
+                ],
+                expected: true
+            }
+        ];
+
+        for (const { object, constructors, expected } of testCases) {
+            const actual = is(object, ...constructors);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});

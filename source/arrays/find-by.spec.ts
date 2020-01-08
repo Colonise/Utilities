@@ -1,14 +1,27 @@
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { ArrayIterator } from '../types';
 import { findBy } from './find-by';
+import { expect } from 'chai';
 
-@TestFixture('findBy() Tests')
-export class FindByTests {
-    @TestCase(['a', 'b', 'c', 'd', 'e'], undefined, <ArrayIterator<string>>(item => item === 'f'))
-    @Test('findBy<T>(array: T[], iterator: ArrayIterator<T>) should use a iterator to return an item')
-    public findBy1<T>(array: T[], expected: T, iterator: ArrayIterator<T>) {
-        const actual = findBy(array, iterator);
+describe('findBy() Tests', () => {
+    it('findBy<T>(array: T[], iterator: ArrayIterator<T>) should use a iterator to return an item', () => {
+        const testCases = [
+            {
+                array: [
+                    'a',
+                    'b',
+                    'c',
+                    'd',
+                    'e'
+                ],
+                expected: undefined,
+                iterator: <ArrayIterator<string>>(item => item === 'f')
+            }
+        ];
 
-        Expect(actual).toEqual(expected);
-    }
-}
+        for (const { array, expected, iterator } of testCases) {
+            const actual = findBy(array, iterator);
+
+            expect(actual).to.equal(expected);
+        }
+    });
+});
