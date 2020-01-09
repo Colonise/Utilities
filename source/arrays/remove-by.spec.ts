@@ -1,5 +1,5 @@
-import { removeBy } from './remove-by';
 import { expect } from 'chai';
+import { removeBy } from './remove-by';
 
 describe('removeBy() Tests', () => {
     it('removeBy<T>(array: T[], items: T[]) should remove an array of items from an array', () => {

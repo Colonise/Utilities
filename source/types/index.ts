@@ -7,4 +7,5 @@ export * from './finder';
 export * from './indexed';
 export * from './instance-of';
 export * from './number-dictionary';
+export * from './object-iterator';
 export * from './string-dictionary';
