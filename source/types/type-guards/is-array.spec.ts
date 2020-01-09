@@ -1,5 +1,5 @@
-import { isArray } from './is-array';
 import { expect } from 'chai';
+import { isArray } from './is-array';
 
 describe('isArray() Tests', () => {
     it('isArray(object: unknown) should check if a variable is an array', () => {
