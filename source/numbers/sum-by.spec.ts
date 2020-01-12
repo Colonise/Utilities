@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { sumBy } from './sum-by';
 
 describe('sumBy() Tests', () => {
-    it('sumBy(object: unknown, iterator: ObjectIterator<object, number> | ArrayIterator<object, number>) should add all items in an object together using an iterator', () => {
+    it('sumBy(object: unknown, enumerator: ObjectEnumerator<object, number> | ArrayEnumerator<object, number>) should add all items in an object together using an Enumerator', () => {
         const testCases = [
             {
                 object: [
@@ -10,7 +10,7 @@ describe('sumBy() Tests', () => {
                     { a: 2 },
                     { a: 3 }
                 ],
-                iterator: (item: { a: number }) => item.a,
+                enumerator: (item: { a: number }) => item.a,
                 expected: 6
             },
             {
@@ -19,13 +19,13 @@ describe('sumBy() Tests', () => {
                     b: { a: 2 },
                     c: { a: 3 }
                 },
-                iterator: (item: { a: number }) => item.a,
+                enumerator: (item: { a: number }) => item.a,
                 expected: 6
             }
         ];
 
-        for (const { object, iterator, expected } of testCases) {
-            const actual = sumBy(object, iterator);
+        for (const { object, enumerator, expected } of testCases) {
+            const actual = sumBy(object, enumerator);
 
             expect(actual).to.equal(expected);
         }

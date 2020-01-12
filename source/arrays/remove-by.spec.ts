@@ -17,12 +17,12 @@ describe('removeBy() Tests', () => {
                     'b',
                     'e'
                 ],
-                iterator: (item: string) => item >= 'c' && item <= 'd'
+                enumerator: (item: string) => item >= 'c' && item <= 'd'
             }
         ];
 
-        for (const { array, expected, iterator } of testCases) {
-            const actual = removeBy(array, iterator);
+        for (const { array, expected, enumerator } of testCases) {
+            const actual = removeBy(array, enumerator);
 
             expect(actual).to.eql(expected);
         }

@@ -1,9 +1,9 @@
-import { ArrayIterator } from '../types';
-import { findBy } from './find-by';
 import { expect } from 'chai';
+import { ArrayEnumerator } from '../types';
+import { findBy } from './find-by';
 
 describe('findBy() Tests', () => {
-    it('findBy<T>(array: T[], iterator: ArrayIterator<T>) should use a iterator to return an item', () => {
+    it('findBy<T>(array: T[], enumerator: ArrayEnumerator<T>) should use a Enumerator to return an item', () => {
         const testCases = [
             {
                 array: [
@@ -14,12 +14,12 @@ describe('findBy() Tests', () => {
                     'e'
                 ],
                 expected: undefined,
-                iterator: <ArrayIterator<string>>(item => item === 'f')
+                enumerator: <ArrayEnumerator<string>>(item => item === 'f')
             }
         ];
 
-        for (const { array, expected, iterator } of testCases) {
-            const actual = findBy(array, iterator);
+        for (const { array, expected, enumerator } of testCases) {
+            const actual = findBy(array, enumerator);
 
             expect(actual).to.equal(expected);
         }
