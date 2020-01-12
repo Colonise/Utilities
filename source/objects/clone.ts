@@ -1,4 +1,5 @@
-import { isArray, isObject } from '../types';
+import { isArray } from '../types';
+import { isObject } from '../types/type-guards/is-object';
 import { getOwnPropertyDescriptors } from './get-own-property-descriptors';
 
 export function clone<T>(object: T): T;

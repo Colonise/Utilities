@@ -1,4 +1,4 @@
-import { ArrayEnumerator } from '../types';
+import { ArrayEnumerator } from '../types/array-enumerator';
 
 export function findIndexBy<T>(array: T[], enumerator: ArrayEnumerator<T>): number {
     for (let i = 0; i < array.length; i++) {

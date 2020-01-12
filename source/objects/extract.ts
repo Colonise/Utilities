@@ -1,4 +1,4 @@
-import { Defined } from '../types';
+import { Defined } from '../types/defined';
 
 export function extract<TObject>(object: TObject): Defined<TObject> | undefined;
 export function extract<TObject, TProperty extends keyof Defined<TObject>>(

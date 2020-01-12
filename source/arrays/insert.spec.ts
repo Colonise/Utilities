@@ -1,5 +1,5 @@
-import { insert } from './insert';
 import { expect } from 'chai';
+import { insert } from './insert';
 
 describe('insert() Tests', () => {
     it('insert<T>(array: T[], index: number, item: T) should insert an item into an array', () => {

@@ -1,5 +1,6 @@
-import { enumerate } from '../objects';
-import { ArrayEnumerator, ObjectEnumerator } from '../types';
+import { enumerate } from '../objects/enumerate';
+import { ArrayEnumerator } from '../types/array-enumerator';
+import { ObjectEnumerator } from '../types/object-enumerator';
 
 export function sumBy<T>(array: T[], enumerator: ArrayEnumerator<T, number>): number;
 export function sumBy<T>(object: T, enumerator: ObjectEnumerator<T, number>): number;
