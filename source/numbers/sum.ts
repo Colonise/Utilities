@@ -1,3 +1,4 @@
+import { forIn } from '../objects';
 import { StringDictionary } from '../types';
 
 export function sum<T>(object: T): number;
@@ -10,10 +11,9 @@ export function sum(): number {
 
     let result = 0;
 
-    // tslint:disable-next-line: forin
-    for (const key in object) {
-        result += object[key];
-    }
+    forIn(object, value => {
+        result += value;
+    });
 
     return result;
 }
