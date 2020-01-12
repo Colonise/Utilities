@@ -1,4 +1,4 @@
-import { enumerate } from '../../objects';
+import { enumerate } from '../../objects/enumerate';
 import { NumberDictionary } from '../number-dictionary';
 import { StringDictionary } from '../string-dictionary';
 

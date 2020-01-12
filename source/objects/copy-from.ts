@@ -1,4 +1,5 @@
-import { isObject } from '../types';
+import { isObject } from '../types/type-guards/is-object';
+import { enumerate } from './enumerate';
 
 export function copyFrom<T>(to: T, from: T): T;
 export function copyFrom<T>(to: T, ...from: T[]): T;
@@ -13,11 +14,9 @@ export function copyFrom<T>(to: T, ...froms: T[]): T {
 
     for (const from of froms) {
         if (isObject(from)) {
-            for (const key in from) {
-                if (from.hasOwnProperty(key)) {
-                    to[key] = from[key];
-                }
-            }
+            enumerate(from, (value, key) => {
+                to[key] = value;
+            });
         }
     }
 
