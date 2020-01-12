@@ -56,10 +56,10 @@ export function extract<
     property5: TProperty5
 ):
     | Defined<
-        Defined<
-            Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-        >[TProperty5]
-    >
+          Defined<
+              Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+          >[TProperty5]
+      >
     | undefined;
 export function extract<
     TObject,
@@ -83,13 +83,13 @@ export function extract<
     property6: TProperty6
 ):
     | Defined<
-        // @ts-ignore
-        Defined<
-            Defined<
-                Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-            >[TProperty5]
-        >[TProperty6]
-    >
+          // @ts-ignore
+          Defined<
+              Defined<
+                  Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+              >[TProperty5]
+          >[TProperty6]
+      >
     | undefined;
 export function extract<
     TObject,
@@ -122,14 +122,14 @@ export function extract<
     property7: TProperty7
 ):
     | Defined<
-        Defined<
-            Defined<
-                Defined<
-                    Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-                >[TProperty5]
-            >[TProperty6]
-        >[TProperty7]
-    >
+          Defined<
+              Defined<
+                  Defined<
+                      Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                  >[TProperty5]
+              >[TProperty6]
+          >[TProperty7]
+      >
     | undefined;
 export function extract<
     TObject,
@@ -172,16 +172,16 @@ export function extract<
     property8: TProperty8
 ):
     | Defined<
-        Defined<
-            Defined<
-                Defined<
-                    Defined<
-                        Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
-                    >[TProperty5]
-                >[TProperty6]
-            >[TProperty7]
-        >[TProperty8]
-    >
+          Defined<
+              Defined<
+                  Defined<
+                      Defined<
+                          Defined<Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]>[TProperty4]
+                      >[TProperty5]
+                  >[TProperty6]
+              >[TProperty7]
+          >[TProperty8]
+      >
     | undefined;
 export function extract<
     TObject,
@@ -236,20 +236,20 @@ export function extract<
     property9: TProperty9
 ):
     | Defined<
-        Defined<
-            Defined<
-                Defined<
-                    Defined<
-                        Defined<
-                            Defined<
-                                Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]
-                            >[TProperty4]
-                        >[TProperty5]
-                    >[TProperty6]
-                >[TProperty7]
-            >[TProperty8]
-        >[TProperty9]
-    >
+          Defined<
+              Defined<
+                  Defined<
+                      Defined<
+                          Defined<
+                              Defined<
+                                  Defined<Defined<Defined<TObject>[TProperty1]>[TProperty2]>[TProperty3]
+                              >[TProperty4]
+                          >[TProperty5]
+                      >[TProperty6]
+                  >[TProperty7]
+              >[TProperty8]
+          >[TProperty9]
+      >
     | undefined;
 export function extract<TResult = unknown>(object: unknown, ...properties: string[]): Defined<TResult> | undefined;
 export function extract(object: unknown, ...properties: string[]): unknown {
@@ -259,7 +259,7 @@ export function extract(object: unknown, ...properties: string[]): unknown {
         return undefined;
     }
 
-    // Allow any because to allow easy non-null and non-undefined coalescing
+    // Allow any for easy non-null and non-undefined coalescing
     // tslint:disable-next-line:no-any
     let result = <any>object;
 
@@ -271,7 +271,8 @@ export function extract(object: unknown, ...properties: string[]): unknown {
 
         if (current == null) {
             return undefined;
-        } else {
+        }
+        else {
             result = current;
         }
     }
