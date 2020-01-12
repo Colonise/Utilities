@@ -1,4 +1,4 @@
-import { forIn } from '../objects';
+import { enumerate } from '../objects';
 import { StringDictionary } from '../types';
 
 export function sum<T>(object: T): number;
@@ -11,7 +11,7 @@ export function sum(): number {
 
     let result = 0;
 
-    forIn(object, value => {
+    enumerate(object, value => {
         result += value;
     });
 
