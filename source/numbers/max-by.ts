@@ -1,7 +1,7 @@
 import { enumerate } from '../objects';
 import { ArrayEnumerator, ObjectEnumerator } from '../types';
 
-export function maxBy<T>(array: T[], enumerator: ArrayEnumerator<T, number>): T[keyof T];
+export function maxBy<T>(array: T[], enumerator: ArrayEnumerator<T, number>): T;
 export function maxBy<T>(object: T, enumerator: ObjectEnumerator<T, number>): T[keyof T];
 export function maxBy<T extends object>(
     object: T,
