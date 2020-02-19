@@ -1,5 +1,5 @@
-import { remove } from './remove';
 import { expect } from 'chai';
+import { remove } from './remove';
 
 describe('remove() Tests', () => {
     const testCases = [

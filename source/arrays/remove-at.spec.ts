@@ -1,5 +1,5 @@
-import { removeAt } from './remove-at';
 import { expect } from 'chai';
+import { removeAt } from './remove-at';
 
 describe('removeAt() Tests', () => {
     it('removeAt<T>(array: T[], index: number, count?: number) should remove a count of items from an array by an index', () => {

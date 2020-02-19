@@ -1,5 +1,5 @@
-import { isVoid } from './is-void';
 import { expect } from 'chai';
+import { isVoid } from './is-void';
 
 describe('isVoid() Tests', () => {
     it('isVoid(object: unknown) should check if a variable is null or undefined', () => {

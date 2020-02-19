@@ -1,7 +1,7 @@
+import { expect } from 'chai';
 import { Constructor } from '../types';
 import { InstanceOf } from '../types/instance-of';
 import { clone } from './clone';
-import { expect } from 'chai';
 
 class TestingClass {
     public c = this.a + this.b;

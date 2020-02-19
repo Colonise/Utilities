@@ -1,5 +1,5 @@
-import { toNumber } from './to-number';
 import { expect } from 'chai';
+import { toNumber } from './to-number';
 
 describe('toNumber() Tests', () => {
     it('toNumber(object: unknown) should convert an object to a number', () => {

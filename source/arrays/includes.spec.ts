@@ -1,5 +1,5 @@
-import { includes } from './includes';
 import { expect } from 'chai';
+import { includes } from './includes';
 
 describe('includes() Tests', () => {
     const testCases = [

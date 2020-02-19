@@ -1,5 +1,5 @@
-import { toBoolean } from './to-boolean';
 import { expect } from 'chai';
+import { toBoolean } from './to-boolean';
 
 describe('toBoolean() Tests', () => {
     const testCases = [

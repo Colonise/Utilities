@@ -1,5 +1,5 @@
-import { findIndex } from './find-index';
 import { expect } from 'chai';
+import { findIndex } from './find-index';
 
 describe('findIndex() Tests', () => {
     it('findIndex<T>(array: T[], item: T) should return the index of an item', () => {

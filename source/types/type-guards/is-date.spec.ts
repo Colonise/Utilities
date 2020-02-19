@@ -1,5 +1,5 @@
-import { isDate } from './is-date';
 import { expect } from 'chai';
+import { isDate } from './is-date';
 
 describe('isDate() Tests', () => {
     it('isDate(object: unknown) should check if a variable is a Date', () => {

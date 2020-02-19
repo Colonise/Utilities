@@ -1,5 +1,5 @@
-import { isFunction } from './is-function';
 import { expect } from 'chai';
+import { isFunction } from './is-function';
 
 describe('isFunction() Tests', () => {
     it('isFunction(object: unknown) should check if a variable is a function', () => {
