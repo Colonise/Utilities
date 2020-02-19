@@ -1,5 +1,5 @@
-import { first } from './first';
 import { expect } from 'chai';
+import { first } from './first';
 
 describe('first() Tests', () => {
     const testCases = [

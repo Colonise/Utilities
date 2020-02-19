@@ -1,5 +1,5 @@
-import { last } from './last';
 import { expect } from 'chai';
+import { last } from './last';
 
 describe('last() Tests', () => {
     it('last<T>(array: T[]) should return the last item', () => {

@@ -1,5 +1,5 @@
-import { isString } from './is-string';
 import { expect } from 'chai';
+import { isString } from './is-string';
 
 describe('isString() Tests', () => {
     it('isString(object: unknown) should check if a variable is a string', () => {

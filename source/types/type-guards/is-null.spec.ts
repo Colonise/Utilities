@@ -1,5 +1,5 @@
-import { isNull } from './is-null';
 import { expect } from 'chai';
+import { isNull } from './is-null';
 
 describe('isNull() Tests', () => {
     it('isNull(object: unknown) should check if a variable is null', () => {

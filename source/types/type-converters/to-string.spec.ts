@@ -1,5 +1,5 @@
-import { toString } from './to-string';
 import { expect } from 'chai';
+import { toString } from './to-string';
 
 describe('toString() Tests', () => {
     it('toString(object: unknown) should convert an object to a string', () => {

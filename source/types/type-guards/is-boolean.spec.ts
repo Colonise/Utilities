@@ -1,5 +1,5 @@
-import { isBoolean } from './is-boolean';
 import { expect } from 'chai';
+import { isBoolean } from './is-boolean';
 
 describe('isBoolean() Tests', () => {
     it('isBoolean(object: unknown) should check if a variable is a boolean', () => {

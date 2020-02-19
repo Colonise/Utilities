@@ -1,5 +1,5 @@
-import { isObject } from './is-object';
 import { expect } from 'chai';
+import { isObject } from './is-object';
 
 describe('isObject() Tests', () => {
     it('isObject(object: unknown) should check if a variable is a object', () => {

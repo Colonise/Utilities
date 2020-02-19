@@ -1,5 +1,5 @@
-import { removeMany } from './remove-many';
 import { expect } from 'chai';
+import { removeMany } from './remove-many';
 
 describe('removeMany() Tests', () => {
     const testCases = [

@@ -1,5 +1,5 @@
-import { is } from './is';
 import { expect } from 'chai';
+import { is } from './is';
 
 describe('is() Tests', () => {
     it('is(obj: unknown, constructor: Constructor<unknown>) should check if a variable is an instance of a constructor', () => {

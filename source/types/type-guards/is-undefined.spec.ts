@@ -1,5 +1,5 @@
-import { isUndefined } from './is-undefined';
 import { expect } from 'chai';
+import { isUndefined } from './is-undefined';
 
 describe('isUndefined() Tests', () => {
     it('isUndefined(object: unknown) should check if a variable is undefined', () => {

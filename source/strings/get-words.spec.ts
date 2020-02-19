@@ -1,5 +1,5 @@
-import { getWords } from './get-words';
 import { expect } from 'chai';
+import { getWords } from './get-words';
 
 describe('getWords() Tests', () => {
     it('getWords(value: string) should get the words from a string', () => {

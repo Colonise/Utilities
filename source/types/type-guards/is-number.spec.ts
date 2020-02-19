@@ -1,5 +1,5 @@
-import { isNumber } from './is-number';
 import { expect } from 'chai';
+import { isNumber } from './is-number';
 
 describe('isNumber() Tests', () => {
     it('isNumber(object: unknown) should check if a variable is a number', () => {

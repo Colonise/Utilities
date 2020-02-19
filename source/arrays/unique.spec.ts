@@ -1,5 +1,5 @@
-import { unique } from './unique';
 import { expect } from 'chai';
+import { unique } from './unique';
 
 describe('unique() Tests', () => {
     const testCases = [

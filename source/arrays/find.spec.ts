@@ -1,5 +1,5 @@
-import { find } from './find';
 import { expect } from 'chai';
+import { find } from './find';
 
 describe('find() Tests', () => {
     const testCases = [

@@ -1,5 +1,5 @@
-import { isError } from './is-error';
 import { expect } from 'chai';
+import { isError } from './is-error';
 
 describe('isError() Tests', () => {
     it('isError(object: unknown) should check if a variable is an Error', () => {
