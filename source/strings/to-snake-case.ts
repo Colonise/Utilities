@@ -1,5 +1,7 @@
 import { copy } from '../objects';
-import { getWords, GetWordsOptions } from './get-words';
+import { getWords } from './get-words';
+// eslint-disable-next-line no-duplicate-imports
+import type { GetWordsOptions } from './get-words';
 import { toLowerCase } from './to-lower-case';
 
 export function toSnakeCase(value: string): string;

@@ -1,16 +1,16 @@
-import { toString } from '../types';
 import { toLowerCase } from './to-lower-case';
+// eslint-disable-next-line @typescript-eslint/no-shadow
+import { toString } from '../types';
 import { toUpperCase } from './to-upper-case';
 
-export function capitalise(value: string): string;
-export function capitalise(_value: string): string {
-    const value = toString(_value);
+export function capitalise(value: unknown): string {
+    const parsedValue = toString(value);
 
-    if (value.length === 0) {
+    if (parsedValue.length === 0) {
         return '';
     }
 
-    const result = toUpperCase(value[0]) + toLowerCase(value.slice(1));
+    const result = toUpperCase(parsedValue[0]) + toLowerCase(parsedValue.slice(1));
 
     return result;
 }

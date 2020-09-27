@@ -1,5 +1,7 @@
 import { copy } from '../objects';
-import { StringDictionary, toString } from '../types';
+import type { StringDictionary } from '../types';
+// eslint-disable-next-line no-duplicate-imports, @typescript-eslint/no-shadow
+import { toString } from '../types';
 
 /**
  * The defaults are English-based because the author only writes in English.
@@ -7,6 +9,7 @@ import { StringDictionary, toString } from '../types';
  * Anything not in letters or separators will not be included in words, but will not separate words.
  */
 export interface GetWordsOptions {
+
     /**
      * Whether to include the character in words.
      *
@@ -16,6 +19,7 @@ export interface GetWordsOptions {
      *  - The English Numbers
      */
     letters?: StringDictionary<boolean>;
+
     /**
      * Whether to treat the characters as part of a separator between words.
      *
@@ -27,6 +31,7 @@ export interface GetWordsOptions {
      *  - NUL: \0
      */
     separators?: StringDictionary<boolean>;
+
     /**
      * Enable detecting words not separated by a character, but each word starts with an upper case character. (PascalCase).
      *
@@ -39,68 +44,70 @@ export interface GetWordsOptions {
 
 const defaultGetWordsOptions: GetWordsOptions = {
     letters: {
-        'a': true,
-        'b': true,
-        'c': true,
-        'd': true,
-        'e': true,
-        'f': true,
-        'g': true,
-        'h': true,
-        'i': true,
-        'j': true,
-        'k': true,
-        'l': true,
-        'm': true,
-        'n': true,
-        'o': true,
-        'p': true,
-        'q': true,
-        'r': true,
-        's': true,
-        't': true,
-        'u': true,
-        'v': true,
-        'w': true,
-        'x': true,
-        'y': true,
-        'z': true,
-        'A': true,
-        'B': true,
-        'C': true,
-        'D': true,
-        'E': true,
-        'F': true,
-        'G': true,
-        'H': true,
-        'I': true,
-        'J': true,
-        'K': true,
-        'L': true,
-        'M': true,
-        'N': true,
-        'O': true,
-        'P': true,
-        'Q': true,
-        'R': true,
-        'S': true,
-        'T': true,
-        'U': true,
-        'V': true,
-        'W': true,
-        'X': true,
-        'Y': true,
-        'Z': true,
-        '0': true,
-        '1': true,
-        '2': true,
-        '3': true,
-        '4': true,
-        '5': true,
-        '6': true,
-        '7': true,
-        '8': true,
-        '9': true
+        /* eslint-disable id-length, @typescript-eslint/naming-convention, @typescript-eslint/no-magic-numbers */
+        a: true,
+        b: true,
+        c: true,
+        d: true,
+        e: true,
+        f: true,
+        g: true,
+        h: true,
+        i: true,
+        j: true,
+        k: true,
+        l: true,
+        m: true,
+        n: true,
+        o: true,
+        p: true,
+        q: true,
+        r: true,
+        s: true,
+        t: true,
+        u: true,
+        v: true,
+        w: true,
+        x: true,
+        y: true,
+        z: true,
+        A: true,
+        B: true,
+        C: true,
+        D: true,
+        E: true,
+        F: true,
+        G: true,
+        H: true,
+        I: true,
+        J: true,
+        K: true,
+        L: true,
+        M: true,
+        N: true,
+        O: true,
+        P: true,
+        Q: true,
+        R: true,
+        S: true,
+        T: true,
+        U: true,
+        V: true,
+        W: true,
+        X: true,
+        Y: true,
+        Z: true,
+        0: true,
+        1: true,
+        2: true,
+        3: true,
+        4: true,
+        5: true,
+        6: true,
+        7: true,
+        8: true,
+        9: true
+        /* eslint-enable id-length, @typescript-eslint/naming-convention, @typescript-eslint/no-magic-numbers */
     },
     separators: {
         ' ': true,
@@ -113,39 +120,41 @@ const defaultGetWordsOptions: GetWordsOptions = {
 };
 
 const upperCaseLetters: StringDictionary<boolean> = {
-    'A': true,
-    'B': true,
-    'C': true,
-    'D': true,
-    'E': true,
-    'F': true,
-    'G': true,
-    'H': true,
-    'I': true,
-    'J': true,
-    'K': true,
-    'L': true,
-    'M': true,
-    'N': true,
-    'O': true,
-    'P': true,
-    'Q': true,
-    'R': true,
-    'S': true,
-    'T': true,
-    'U': true,
-    'V': true,
-    'W': true,
-    'X': true,
-    'Y': true,
-    'Z': true
+    /* eslint-disable id-length, @typescript-eslint/naming-convention */
+    A: true,
+    B: true,
+    C: true,
+    D: true,
+    E: true,
+    F: true,
+    G: true,
+    H: true,
+    I: true,
+    J: true,
+    K: true,
+    L: true,
+    M: true,
+    N: true,
+    O: true,
+    P: true,
+    Q: true,
+    R: true,
+    S: true,
+    T: true,
+    U: true,
+    V: true,
+    W: true,
+    X: true,
+    Y: true,
+    Z: true
+    /* eslint-enable id-length, @typescript-eslint/naming-convention */
 };
 
 enum CharacterType {
-    Letter,
-    UpperCaseLetter,
-    Separator,
-    Ignore
+    Letter = 0,
+    UpperCaseLetter = 1,
+    Separator = 2,
+    Ignore = 3
 }
 
 function isUpperCaseLetter(letter: string): boolean {
@@ -153,29 +162,31 @@ function isUpperCaseLetter(letter: string): boolean {
 }
 
 function getCharacterType(character: string, options: GetWordsOptions): CharacterType {
-    if (options.letters && options.letters[character]) {
+    if (options.letters?.[character]) {
         return options.pascalCaseAsSeparator && isUpperCaseLetter(character)
             ? CharacterType.UpperCaseLetter
             : CharacterType.Letter;
-    } else if (options.separators && options.separators[character]) {
-        return CharacterType.Separator;
-    } else {
-        return CharacterType.Ignore;
     }
+
+    if (options.separators?.[character]) {
+        return CharacterType.Separator;
+    }
+
+    return CharacterType.Ignore;
 }
 
 export function getWords(value: string): string[];
 export function getWords(value: string, options: GetWordsOptions): string[];
-export function getWords(_value: string, _options: GetWordsOptions = {}): string[] {
-    const value = toString(_value);
-    const options = copy(defaultGetWordsOptions, _options);
+export function getWords(value: string, options: GetWordsOptions = {}): string[] {
+    const parsedValue = toString(value);
+    const parsedOptions = copy(defaultGetWordsOptions, options);
 
     const result: string[] = [];
     let currentWord = '';
 
-    for (let i = 0; i < value.length; i++) {
-        const character = value[i];
-        const currentCharacterType = getCharacterType(character, options);
+    for (let i = 0; i < parsedValue.length; i++) {
+        const character = parsedValue[i];
+        const currentCharacterType = getCharacterType(character, parsedOptions);
 
         switch (currentCharacterType) {
             case CharacterType.Separator:
@@ -203,7 +214,7 @@ export function getWords(_value: string, _options: GetWordsOptions = {}): string
         }
 
         // If we are at the end of the string and have a word, add it
-        if (i === value.length - 1 && currentWord.length > 0) {
+        if (i === parsedValue.length - 1 && currentWord.length > 0) {
             result.push(currentWord);
         }
     }

@@ -1,6 +1,8 @@
-import { copy } from '../objects';
 import { capitalise } from './capitalise';
-import { getWords, GetWordsOptions } from './get-words';
+import { copy } from '../objects';
+import { getWords } from './get-words';
+// eslint-disable-next-line no-duplicate-imports
+import type { GetWordsOptions } from './get-words';
 
 export function toPascalCase(value: string): string;
 export function toPascalCase(value: string, options: GetWordsOptions): string;
@@ -9,8 +11,8 @@ export function toPascalCase(value: string, options: GetWordsOptions = {}): stri
 
     let result = '';
 
-    for (let i = 0; i < words.length; i++) {
-        result += capitalise(words[i]);
+    for (const word of words) {
+        result += capitalise(word);
     }
 
     return result;

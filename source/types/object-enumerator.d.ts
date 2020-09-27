@@ -1,1 +1,1 @@
-export type ObjectEnumerator<T, R = unknown> = (item: T[keyof T], key: keyof T, object: T) => R;
+export type ObjectEnumerator<TObject, TResult = unknown> = (item: TObject[keyof TObject], key: keyof TObject, object: TObject) => TResult;

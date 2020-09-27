@@ -1,6 +1,6 @@
 import { enumerate } from '../../objects/enumerate';
-import { NumberDictionary } from '../number-dictionary';
-import { StringDictionary } from '../string-dictionary';
+import type { NumberDictionary } from '../number-dictionary';
+import type { StringDictionary } from '../string-dictionary';
 
 export function toArray<T>(object: StringDictionary<T>): T[];
 export function toArray<T>(object: NumberDictionary<T>): T[];
