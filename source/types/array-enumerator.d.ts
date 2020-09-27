@@ -1,1 +1,1 @@
-export type ArrayEnumerator<T, R = unknown> = (item: T, index: number, array: T[]) => R;
+export type ArrayEnumerator<TItem, TResult = unknown> = (item: TItem, index: number, array: TItem[]) => TResult;

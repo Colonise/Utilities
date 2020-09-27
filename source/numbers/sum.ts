@@ -1,13 +1,11 @@
 import { enumerate } from '../objects/enumerate';
-import { StringDictionary } from '../types/string-dictionary';
+import type { NumberDictionary } from '../types/number-dictionary';
 
 export function sum<T>(object: T): number;
 export function sum<T>(array: T[]): number;
 export function sum<T>(...array: T[]): number;
-export function sum(): number {
-    let object: StringDictionary<number>;
-
-    object = arguments.length > 1 ? Array.from(arguments) : arguments[0];
+export function sum(...args: number[] | [number[]]): number {
+    const object: NumberDictionary<number> = args.length === 1 ? <NumberDictionary<number>>args[0] : Array.from(<number[]>args);
 
     let result = 0;
 

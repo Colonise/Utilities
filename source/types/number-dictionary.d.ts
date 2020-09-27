@@ -1,3 +1,3 @@
-export interface NumberDictionary<T> {
-    [key: number]: T;
+export interface NumberDictionary<TValue> {
+    [key: number]: TValue;
 }

@@ -1,8 +1,9 @@
-import { isObject } from '../types/type-guards/is-object';
 import { enumerate } from './enumerate';
+import { isObject } from '../types/type-guards/is-object';
 
 export function copyFrom<T>(to: T, from: T): T;
 export function copyFrom<T>(to: T, ...from: T[]): T;
+// eslint-disable-next-line id-length
 export function copyFrom<T>(to: T, ...froms: T[]): T {
     if (!isObject(to)) {
         return to;

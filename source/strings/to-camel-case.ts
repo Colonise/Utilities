@@ -1,6 +1,8 @@
-import { copy } from '../objects';
 import { capitalise } from './capitalise';
-import { getWords, GetWordsOptions } from './get-words';
+import { copy } from '../objects';
+import { getWords } from './get-words';
+// eslint-disable-next-line no-duplicate-imports
+import type { GetWordsOptions } from './get-words';
 import { toLowerCase } from './to-lower-case';
 
 export function toCamelCase(value: string): string;

@@ -1,6 +1,6 @@
 import { enumerate } from '../../objects/enumerate';
-import { NumberDictionary } from '../number-dictionary';
-import { StringDictionary } from '../string-dictionary';
+import type { NumberDictionary } from '../number-dictionary';
+import type { StringDictionary } from '../string-dictionary';
 
 export function toMap<T>(object: StringDictionary<T>): Map<string, T>;
 export function toMap<T>(object: NumberDictionary<T>): Map<number, T>;

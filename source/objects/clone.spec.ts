@@ -40,7 +40,6 @@ describe('clone() Tests', () => {
             const actual = clone(object);
 
             expect(actual).to.eql(expected);
-            // tslint:disable-next-line: no-unused-expression
             expect(actual instanceof (<InstanceOf<Constructor>>expected).constructor).to.be.true;
         }
     });

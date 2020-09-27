@@ -1,7 +1,9 @@
-import { copy } from '../objects';
-import { StringDictionary } from '../types';
 import { capitalise } from './capitalise';
-import { getWords, GetWordsOptions } from './get-words';
+import { copy } from '../objects';
+import { getWords } from './get-words';
+// eslint-disable-next-line no-duplicate-imports
+import type { GetWordsOptions } from './get-words';
+import type { StringDictionary } from '../types';
 import { toLowerCase } from './to-lower-case';
 
 export interface ToTitleCaseOptions extends GetWordsOptions {
@@ -45,36 +47,38 @@ const defaultToTitleCaseOptions: ToTitleCaseOptions = {
      *    - with
      */
     lowerCaseWords: {
+        /* eslint-disable id-length */
         // Articles
-        'a': true,
-        'an': true,
-        'the': true,
+        a: true,
+        an: true,
+        the: true,
 
         // Conjunctions
-        'and': true,
-        'but': true,
+        and: true,
+        but: true,
         'for': true,
-        'nor': true,
-        'or': true,
-        'so': true,
-        'yet': true,
+        nor: true,
+        or: true,
+        so: true,
+        yet: true,
 
         // Prepositions
-        'as': true,
-        'at': true,
-        'by': true,
-        'from': true,
+        as: true,
+        at: true,
+        by: true,
+        from: true,
         'in': true,
-        'into': true,
-        'of': true,
-        'off': true,
-        'on': true,
-        'onto': true,
-        'per': true,
-        'than': true,
-        'to': true,
-        'until': true,
-        'with': true,
+        into: true,
+        of: true,
+        off: true,
+        on: true,
+        onto: true,
+        per: true,
+        than: true,
+        to: true,
+        until: true,
+        'with': true
+        /* eslint-enable id-length */
     },
     pascalCaseAsSeparator: true
 };
@@ -83,7 +87,7 @@ export function toTitleCase(value: string): string;
 export function toTitleCase(value: string, options: ToTitleCaseOptions): string;
 export function toTitleCase(value: string, options: ToTitleCaseOptions = {}): string {
     const words = getWords(value, copy(defaultToTitleCaseOptions, options));
-    const lowerCaseWords = options.lowerCaseWords || {};
+    const lowerCaseWords = options.lowerCaseWords ?? {};
 
     const titleCaseWords = words.map(word => {
         const lowerCaseWord = toLowerCase(word);

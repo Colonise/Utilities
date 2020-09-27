@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-shadow
 export function toString(object: unknown): string {
-    return `${object}`;
+    return String(object);
 }
