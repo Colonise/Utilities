@@ -1,5 +1,13 @@
 Changelog
 
+# [6.1.0](https://github.com/Colonise/Utilities/compare/v6.0.0...v6.1.0) (2020-10-05)
+
+
+### Features
+
+* **isBigInt:** add isBigInt() function ([fe0bdf7](https://github.com/Colonise/Utilities/commit/fe0bdf77673b9555c6571808541158b5af8e1897))
+* **isSymbol:** add isSymbol function ([b75154a](https://github.com/Colonise/Utilities/commit/b75154aca591d3e3ca588455031f36af80e41744))
+
 # [6.0.0](https://github.com/Colonise/Utilities/compare/v5.0.1...v6.0.0) (2020-09-27)
 
 
