@@ -9,6 +9,7 @@ export * from './is-object-tag';
 export * from './is-object';
 export * from './is-reg-exp';
 export * from './is-string';
+export * from './is-symbol';
 export * from './is-undefined';
 export * from './is-void';
 export * from './is';
