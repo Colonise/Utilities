@@ -1,5 +1,7 @@
 Changelog
 
+## [6.1.2](https://github.com/Colonise/Utilities/compare/v6.1.1...v6.1.2) (2020-10-07)
+
 ## [6.1.1](https://github.com/Colonise/Utilities/compare/v6.1.0...v6.1.1) (2020-10-06)
 
 # [6.1.0](https://github.com/Colonise/Utilities/compare/v6.0.0...v6.1.0) (2020-10-05)
