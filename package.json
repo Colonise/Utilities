@@ -33,6 +33,6 @@
         "@colonise/config": "latest"
     },
     "dependencies": {
-        "tslib": "^2.0.1"
+        "tslib": "^2.0.2"
     }
 }
