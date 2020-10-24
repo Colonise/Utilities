@@ -1,5 +1,12 @@
 Changelog
 
+## [6.2.1](https://github.com/Colonise/Utilities/compare/v6.2.0...v6.2.1) (2020-10-24)
+
+
+### Bug Fixes
+
+* **general:** actually export the general module ([491b4fa](https://github.com/Colonise/Utilities/commit/491b4fa39e480aa0430ddfca07032943a92a1ad7))
+
 # [6.2.0](https://github.com/Colonise/Utilities/compare/v6.1.0...v6.2.0) (2020-10-24)
 
 
