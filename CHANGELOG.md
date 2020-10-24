@@ -1,5 +1,23 @@
 Changelog
 
+# [6.2.0](https://github.com/Colonise/Utilities/compare/v6.1.0...v6.2.0) (2020-10-24)
+
+
+### Bug Fixes
+
+* compareBooleans include null ([d341d30](https://github.com/Colonise/Utilities/commit/d341d30616449d18a632f33a5e68b4bcb5ce9c50))
+
+
+### Features
+
+* compareBooleans ([522c909](https://github.com/Colonise/Utilities/commit/522c909ee7bc88227e5070067745c24234d23218))
+* compareDates ([7c2f84c](https://github.com/Colonise/Utilities/commit/7c2f84c2986fe2ad46da87d43bcc8c40e5a98b53))
+* compareNull ([4a74c52](https://github.com/Colonise/Utilities/commit/4a74c5240bc44781cf6aedbda6bfeb84be95be75))
+* compareNullOrUndefined ([6c9743c](https://github.com/Colonise/Utilities/commit/6c9743c38f18c80bd674f764ae2a81a301b0f12d))
+* compareNumbers ([47ba3cc](https://github.com/Colonise/Utilities/commit/47ba3cc09959e3db29ce97995186a23ac5c283d2))
+* compareStrings ([8b15f1a](https://github.com/Colonise/Utilities/commit/8b15f1a3c067024dc3bbc3c67ea6b625a7556706))
+* compareUndefined ([2cc3daa](https://github.com/Colonise/Utilities/commit/2cc3daa233af54b53fbc18d16f0e3f68d81026b7))
+
 # [6.1.0](https://github.com/Colonise/Utilities/compare/v6.0.0...v6.1.0) (2020-10-05)
 
 
