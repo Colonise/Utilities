@@ -1,13 +1,12 @@
 # Utilities
 
-[![Travis CI Build][travis-ci-badge]][travis-ci-url]
+[![Build][build-badge]][build-url]
 [![Code Climate Test Coverage][code-climate-coverage-badge]][code-climate-coverage-url]
 [![Code Climate Maintainability][code-climate-maintainability-badge]][code-climate-maintainability-url]
 [![License][license-badge]][license-url]
 [![npm version][npm-version-badge]][npm-version-url]
 [![npm bundle size \(minified\)][npm-minified-badge]][npm-minified-url]
 [![npm bundle size \(minified, zipped\)][npm-minified-minzipped-badge]][npm-minified-minzipped-url]
-[![Greenkeeper][greenkeeper-badge]][greenkeeper-url]
 
 > A simple Utilities library written in TypeScript.
 
@@ -39,8 +38,8 @@ Utilities is part of Colonise's Open Source Software, and is made with love by t
 [colonise-logo]: /documentation/assets/colonise256.png
 [colonise-url]: https://colonise.org/
 
-[travis-ci-badge]: https://img.shields.io/travis/Colonise/Utilities.svg
-[travis-ci-url]: https://travis-ci.com/Colonise/Utilities
+[build-badge]: https://img.shields.io/github/workflow/status/colonise/utilities/Node.js%20CI
+[build-url]: https://github.com/Colonise/Utilities/actions?query=workflow%3A%22Node.js+CI%22
 
 [code-climate-coverage-badge]: https://img.shields.io/codeclimate/coverage/Colonise/Utilities.svg
 [code-climate-coverage-url]: https://codeclimate.com/github/Colonise/Utilities
@@ -59,6 +58,3 @@ Utilities is part of Colonise's Open Source Software, and is made with love by t
 
 [npm-minified-minzipped-badge]: https://img.shields.io/bundlephobia/minzip/@colonise/utilities.svg
 [npm-minified-minzipped-url]: https://bundlephobia.com/result?p=@colonise/utilities
-
-[greenkeeper-badge]: https://badges.greenkeeper.io/Colonise/Utilities.svg
-[greenkeeper-url]: https://greenkeeper.io/
