@@ -8,6 +8,7 @@ export * from './is-null';
 export * from './is-number';
 export * from './is-object-tag';
 export * from './is-object';
+export * from './is-plain-object';
 export * from './is-reg-exp';
 export * from './is-string';
 export * from './is-symbol';
