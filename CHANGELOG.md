@@ -1,5 +1,12 @@
 Changelog
 
+## [6.3.2](https://github.com/Colonise/Utilities/compare/v6.3.1...v6.3.2) (2020-10-25)
+
+
+### Bug Fixes
+
+* rename .d.ts files to .ts ([01da973](https://github.com/Colonise/Utilities/commit/01da973a2eb0cbbb480f6eee7c66a26fdbeb60e1))
+
 ## [6.3.1](https://github.com/Colonise/Utilities/compare/v6.3.0...v6.3.1) (2020-10-25)
 
 # [6.3.0](https://github.com/Colonise/Utilities/compare/v6.2.1...v6.3.0) (2020-10-25)
