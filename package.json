@@ -30,9 +30,9 @@
     },
     "homepage": "https://github.com/Colonise/Utilities#readme",
     "devDependencies": {
-        "@colonise/config": "latest"
+        "@colonise/config": "^3.13.0"
     },
     "dependencies": {
-        "tslib": "^2.0.1"
+        "tslib": "^2.0.3"
     }
 }
