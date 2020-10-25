@@ -1,5 +1,13 @@
 Changelog
 
+# [6.3.0](https://github.com/Colonise/Utilities/compare/v6.2.1...v6.3.0) (2020-10-25)
+
+
+### Features
+
+* add isPlainObject() ([827f38d](https://github.com/Colonise/Utilities/commit/827f38d26737a291555348fb694837cd427d9412))
+* add toDisplayString() ([81374ad](https://github.com/Colonise/Utilities/commit/81374ad2affe92aa6935796dae212dc63d92d5e9))
+
 ## [6.2.1](https://github.com/Colonise/Utilities/compare/v6.2.0...v6.2.1) (2020-10-24)
 
 
