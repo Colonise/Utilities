@@ -1,6 +1,5 @@
 import { compareNullOrUndefined } from './compare-null-or-undefined';
-
-type Comparer<T> = (itemA: T, itemB: T) => number;
+import type { Comparer } from './comparer';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export function compareMany<T>(itemA: T | null | undefined, itemB: T | null | undefined, comparers: Comparer<T>[]): number {
