@@ -1,4 +1,4 @@
-import { copy } from '../objects';
+import { copy } from '../general';
 import type { StringDictionary } from '../types';
 // eslint-disable-next-line no-duplicate-imports, @typescript-eslint/no-shadow
 import { toString } from '../types';

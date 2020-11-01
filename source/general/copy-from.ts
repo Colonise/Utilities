@@ -1,4 +1,4 @@
-import { enumerate } from './enumerate';
+import { enumerate } from '../objects';
 import { isObject } from '../types/type-guards/is-object';
 
 export function copyFrom<T>(to: T, from: T): T;
