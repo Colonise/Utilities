@@ -1,5 +1,12 @@
 Changelog
 
+# [6.4.0](https://github.com/Colonise/Utilities/compare/v6.3.2...v6.4.0) (2020-11-01)
+
+
+### Features
+
+* add compareMany() function ([d8f9f75](https://github.com/Colonise/Utilities/commit/d8f9f75410382ae51d8c48db7d3f9a02bd9290fa))
+
 ## [6.3.2](https://github.com/Colonise/Utilities/compare/v6.3.1...v6.3.2) (2020-10-25)
 
 
