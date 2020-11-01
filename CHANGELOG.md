@@ -1,5 +1,12 @@
 Changelog
 
+# [6.5.0](https://github.com/Colonise/Utilities/compare/v6.4.0...v6.5.0) (2020-11-01)
+
+
+### Features
+
+* add Comparer type ([39fa764](https://github.com/Colonise/Utilities/commit/39fa7647e185be03edda848ed94e6ca84c02cf74))
+
 # [6.4.0](https://github.com/Colonise/Utilities/compare/v6.3.2...v6.4.0) (2020-11-01)
 
 
