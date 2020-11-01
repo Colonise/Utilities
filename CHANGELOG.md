@@ -1,5 +1,12 @@
 Changelog
 
+## [6.5.1](https://github.com/Colonise/Utilities/compare/v6.5.0...v6.5.1) (2020-11-01)
+
+
+### Bug Fixes
+
+* move some functions to general folder ([451a6c9](https://github.com/Colonise/Utilities/commit/451a6c9d4c8a696ad40f2c923c0499a7b338c35b))
+
 # [6.5.0](https://github.com/Colonise/Utilities/compare/v6.4.0...v6.5.0) (2020-11-01)
 
 
