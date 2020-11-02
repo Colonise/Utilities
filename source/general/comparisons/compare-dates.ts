@@ -12,5 +12,5 @@ export function compareDates(
         return compareNullOrUndefined(itemA, itemB);
     }
 
-    return compareNumbers(itemA.valueOf(), itemA.valueOf());
+    return compareNumbers(itemA.valueOf(), itemB.valueOf());
 }
