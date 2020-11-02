@@ -1,5 +1,12 @@
 Changelog
 
+## [6.5.2](https://github.com/Colonise/Utilities/compare/v6.5.1...v6.5.2) (2020-11-02)
+
+
+### Bug Fixes
+
+* **compareDates:** result is always 0 ([8cd680e](https://github.com/Colonise/Utilities/commit/8cd680e9fcfb94916229ed867ac9497d56a0ca95))
+
 ## [6.5.1](https://github.com/Colonise/Utilities/compare/v6.5.0...v6.5.1) (2020-11-01)
 
 
