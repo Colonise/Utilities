@@ -1,5 +1,12 @@
 Changelog
 
+## [6.5.3](https://github.com/Colonise/Utilities/compare/v6.5.2...v6.5.3) (2021-03-02)
+
+
+### Bug Fixes
+
+* toHyphenCase, toDotCase, toSnakeCase ([#52](https://github.com/Colonise/Utilities/issues/52)) ([a033d8d](https://github.com/Colonise/Utilities/commit/a033d8d95870750c0611ad2299eff6217cf33eda))
+
 ## [6.5.2](https://github.com/Colonise/Utilities/compare/v6.5.1...v6.5.2) (2020-11-02)
 
 
