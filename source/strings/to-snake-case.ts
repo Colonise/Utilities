@@ -7,9 +7,8 @@ import { toLowerCase } from './to-lower-case';
 export function toSnakeCase(value: string): string;
 export function toSnakeCase(value: string, options: GetWordsOptions): string;
 export function toSnakeCase(value: string, options: GetWordsOptions = {}): string {
-    const lowerCaseValue = toLowerCase(value);
-    const lowerCaseWords = getWords(lowerCaseValue, copy({ pascalCaseAsSeparator: true }, options));
-    const result = lowerCaseWords.join('_');
+    const words = getWords(value, copy({ pascalCaseAsSeparator: true }, options));
+    const result = words.map(toLowerCase).join('_');
 
     return result;
 }
