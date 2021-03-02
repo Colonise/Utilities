@@ -7,9 +7,8 @@ import { toLowerCase } from './to-lower-case';
 export function toHyphenCase(value: string): string;
 export function toHyphenCase(value: string, options: GetWordsOptions): string;
 export function toHyphenCase(value: string, options: GetWordsOptions = {}): string {
-    const lowerCaseValue = toLowerCase(value);
-    const lowerCaseWords = getWords(lowerCaseValue, copy({ pascalCaseAsSeparator: true }, options));
-    const result = lowerCaseWords.join('-');
+    const words = getWords(value, copy({ pascalCaseAsSeparator: true }, options));
+    const result = words.map(toLowerCase).join('-');
 
     return result;
 }
