@@ -1,5 +1,12 @@
 Changelog
 
+# [6.6.0](https://github.com/Colonise/Utilities/compare/v6.5.3...v6.6.0) (2022-08-16)
+
+
+### Features
+
+* add compareBy and compareXBy comparers ([dcc0d3c](https://github.com/Colonise/Utilities/commit/dcc0d3cf0953724564d54b0783ddd976381fe95a))
+
 ## [6.5.3](https://github.com/Colonise/Utilities/compare/v6.5.2...v6.5.3) (2021-03-02)
 
 
