@@ -1,5 +1,12 @@
 Changelog
 
+## [6.6.1](https://github.com/Colonise/Utilities/compare/v6.6.0...v6.6.1) (2022-12-10)
+
+
+### Bug Fixes
+
+* toDisplayString throws error on plain object ([4eb6194](https://github.com/Colonise/Utilities/commit/4eb6194a1604abffacaa7eeb3d15854524f871df))
+
 # [6.6.0](https://github.com/Colonise/Utilities/compare/v6.5.3...v6.6.0) (2022-08-16)
 
 
