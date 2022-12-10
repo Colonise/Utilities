@@ -54,7 +54,7 @@ export function toDisplayString(value: unknown, maxLength = Infinity): string {
     if (isSymbol(value)) {
         return withMaxLength(toString(value), maxLength, () => {
             try {
-                const description = (<{description: string | undefined; }><unknown>value).description ?? '';
+                const description = (<{ description: string | undefined; }><unknown>value).description ?? '';
                 const symbolAndEllipsisParenthesesLength = 11;
 
                 return `Symbol(${description.slice(0, maxLength - symbolAndEllipsisParenthesesLength)}...`;
@@ -126,8 +126,18 @@ export function toDisplayString(value: unknown, maxLength = Infinity): string {
     }
 
     if (isPlainObject(value)) {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        return withMaxLength(JSON.stringify(value, (_key, propertyValue) => toDisplayString(propertyValue)), maxLength, displayString => {
+        let isInitialReplacerCall = true;
+
+        return withMaxLength(JSON.stringify(value, (_key, propertyValue) => {
+            if (isInitialReplacerCall) {
+                isInitialReplacerCall = false;
+
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+                return propertyValue;
+            }
+
+            return toDisplayString(propertyValue);
+        }), maxLength, displayString => {
             const ellipsisAndCurlyBraceLength = 4;
 
             return `{${displayString.slice(1, maxLength - ellipsisAndCurlyBraceLength)}...}`;
