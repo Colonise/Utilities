@@ -16,3 +16,4 @@ export * from './compare-strings';
 export * from './compare-undefined-by';
 export * from './compare-undefined';
 export * from './comparer';
+export * from './reverse-comparer';
