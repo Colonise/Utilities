@@ -1,5 +1,12 @@
 Changelog
 
+# [6.7.0](https://github.com/Colonise/Utilities/compare/v6.6.1...v6.7.0) (2023-04-20)
+
+
+### Features
+
+* add reverseComparer function ([b18eb28](https://github.com/Colonise/Utilities/commit/b18eb282a052f3fb59df09b711cf833772d7fad9))
+
 ## [6.6.1](https://github.com/Colonise/Utilities/compare/v6.6.0...v6.6.1) (2022-12-10)
 
 
