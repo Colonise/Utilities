@@ -1,5 +1,17 @@
 Changelog
 
+# [8.0.0](https://github.com/Colonise/Utilities/compare/v7.0.0...v8.0.0) (2023-07-06)
+
+
+### Features
+
+* change compareMany to return a Comparer ([4b3f935](https://github.com/Colonise/Utilities/commit/4b3f935790139386aa3b546a44e8f81daec61fef))
+
+
+### BREAKING CHANGES
+
+* compareMany now returns a comparer
+
 # [7.0.0](https://github.com/Colonise/Utilities/compare/v6.8.0...v7.0.0) (2023-07-06)
 
 
