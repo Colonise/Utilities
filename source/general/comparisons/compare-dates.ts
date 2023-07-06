@@ -3,14 +3,14 @@ import { compareNumbers } from './compare-numbers';
 
 export function compareDates(
     // eslint-disable-next-line @typescript-eslint/ban-types
-    itemA: Date | null | undefined,
+    itemA: Date | number | string | null | undefined,
     // eslint-disable-next-line @typescript-eslint/ban-types
-    itemB: Date | null | undefined
+    itemB: Date | number | string | null | undefined
 ): number {
     // eslint-disable-next-line no-eq-null, eqeqeq
     if (itemA == null || itemB == null) {
         return compareNullOrUndefined(itemA, itemB);
     }
 
-    return compareNumbers(itemA.valueOf(), itemB.valueOf());
+    return compareNumbers(new Date(itemA).valueOf(), new Date(itemB).valueOf());
 }
