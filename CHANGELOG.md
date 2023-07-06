@@ -1,5 +1,17 @@
 Changelog
 
+# [7.0.0](https://github.com/Colonise/Utilities/compare/v6.8.0...v7.0.0) (2023-07-06)
+
+
+### Features
+
+* Allow compareStrings and compareStringsBy to be case insensitive ([35ebb08](https://github.com/Colonise/Utilities/commit/35ebb08054fb09cc21e80c828f5c861a9a7be8c5)), closes [#122](https://github.com/Colonise/Utilities/issues/122)
+
+
+### BREAKING CHANGES
+
+* Defaults compareStrings and compareStringsBy to case insenstive
+
 # [6.8.0](https://github.com/Colonise/Utilities/compare/v6.7.0...v6.8.0) (2023-07-06)
 
 
