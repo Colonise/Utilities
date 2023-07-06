@@ -1,5 +1,12 @@
 Changelog
 
+# [6.8.0](https://github.com/Colonise/Utilities/compare/v6.7.0...v6.8.0) (2023-07-06)
+
+
+### Features
+
+* accept number or string in compareDates and compareDatesBy ([6a5c6e3](https://github.com/Colonise/Utilities/commit/6a5c6e3be88ffce0b6911ad15eb8d3ef2aeb33b6))
+
 # [6.7.0](https://github.com/Colonise/Utilities/compare/v6.6.1...v6.7.0) (2023-04-20)
 
 
