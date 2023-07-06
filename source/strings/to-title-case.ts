@@ -1,7 +1,6 @@
 import { capitalise } from './capitalise';
 import { copy } from '../general';
 import { getWords } from './get-words';
-// eslint-disable-next-line no-duplicate-imports
 import type { GetWordsOptions } from './get-words';
 import type { StringDictionary } from '../types';
 import { toLowerCase } from './to-lower-case';

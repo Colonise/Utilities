@@ -1,7 +1,6 @@
 import { compareNullOrUndefined } from './compare-null-or-undefined';
 import type { Comparer } from './comparer';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export function compareMany<T>(comparers: Comparer<T>[]): Comparer<T> {
     return (itemA, itemB) => {
         // eslint-disable-next-line no-eq-null, eqeqeq
