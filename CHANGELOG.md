@@ -1,5 +1,12 @@
 Changelog
 
+# [8.1.0](https://github.com/Colonise/Utilities/compare/v8.0.0...v8.1.0) (2024-02-03)
+
+
+### Features
+
+* isDefined ([fb22094](https://github.com/Colonise/Utilities/commit/fb220941736b0b89098cabb03634dd4cb889e985))
+
 # [8.0.0](https://github.com/Colonise/Utilities/compare/v7.0.0...v8.0.0) (2023-07-06)
 
 
