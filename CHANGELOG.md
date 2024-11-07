@@ -1,5 +1,12 @@
 Changelog
 
+# [8.2.0](https://github.com/Colonise/Utilities/compare/v8.1.0...v8.2.0) (2024-11-07)
+
+
+### Features
+
+* add compareOrders and compareOrdersBy ([ef37bf4](https://github.com/Colonise/Utilities/commit/ef37bf4648341e7dea115405df9f62ae0e9549e3))
+
 # [8.1.0](https://github.com/Colonise/Utilities/compare/v8.0.0...v8.1.0) (2024-02-03)
 
 
