@@ -11,6 +11,8 @@ export * from './compare-null-or-undefined';
 export * from './compare-null';
 export * from './compare-numbers-by';
 export * from './compare-numbers';
+export * from './compare-orders-by';
+export * from './compare-orders';
 export * from './compare-strings-by';
 export * from './compare-strings';
 export * from './compare-undefined-by';
